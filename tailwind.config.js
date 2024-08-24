@@ -14,6 +14,10 @@ module.exports = {
       },
     },
     extend: {
+      fontFamily: {
+        bulzing: ["Bulzing"],
+        alienWorld: ["AlienWorld"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

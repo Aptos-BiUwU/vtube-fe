@@ -72,6 +72,25 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-gradient-to-b to-[#2B0046] from-[#0E0220] min-h-[100vh] px-4;
   }
+
+  .primary {
+    @apply text-transparent inline-block bg-clip-text;
+    background-image: linear-gradient(to right, #FC9CE7, #EBDCFF, #D188FF, #C7BEFF, #FF8AE6);
+  }
+
+  .gradient {
+    background-image: linear-gradient(to right, #FC9CE7, #EBDCFF, #D188FF, #C7BEFF, #FF8AE6);
+  }
+}
+
+@font-face {
+  font-family: 'Bulzing';
+  src: url('./assets/fonts/Bulzing.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AlienWorld';
+  src: url('./assets/fonts/AlienWorld.ttf') format('truetype');
 }
