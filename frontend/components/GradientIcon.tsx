@@ -1,20 +1,20 @@
-import React from "react";
+import React, { Fragment } from "react";
 
 export const GradientIcon = ({ children, focus }: { children: React.ReactElement; focus?: boolean }) => {
   return (
-    <>
+    <div className="mr-4">
       <svg width="0" height="0">
-        <linearGradient id="icon-gradient" x1="100%" y1="100%" x2="0%" y2="0%">
-          <stop stopColor="#F6CDFA" offset="0%" />
-          <stop stopColor="#B8D7FB" offset="25%" />
-          <stop stopColor="#FBC9FF" offset="50%" />
-          <stop stopColor="#CCE3FE" offset="75%" />
-          <stop stopColor="#F8ADFF" offset="80%" />
-        </linearGradient>
+        <defs>
+          <linearGradient id="icon-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop stopColor="#FF7AE4" offset="0%" />
+            <stop stopColor="#E088FB" offset="33%" />
+            <stop stopColor="#81ACF8" offset="66%" />
+          </linearGradient>
+        </defs>
       </svg>
       {React.cloneElement(children, {
-        style: focus ? { stroke: "url(#icon-gradient)" } : { stroke: "#7C6D8E" },
+        style: focus ? { stroke: "url(#icon-gradient)" } : { stroke: "black" },
       })}
-    </>
+    </div>
   );
 };

@@ -17,6 +17,8 @@ module.exports = {
       fontFamily: {
         bulzing: ["Bulzing"],
         alienWorld: ["AlienWorld"],
+        franxurter: ["FranxurterTotally"],
+        fairymuffin: ["FairyMuffin"],
       },
       colors: {
         border: "hsl(var(--border))",
