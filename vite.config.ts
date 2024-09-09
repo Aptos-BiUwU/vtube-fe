@@ -8,7 +8,7 @@ export default defineConfig({
     outDir: "build",
   },
   server: {
-    open: true,
+    open: false,
   },
   plugins: [
     react(),
