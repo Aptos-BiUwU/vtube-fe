@@ -66,6 +66,7 @@ function App() {
         <section className="flex flex-col flex-grow">
           <img src={Banner} className="mx-auto" />
           <div className="flex gap-2 items-center mb-4">
+            {/* @ts-ignore */}
             <Fire width="50px" height="50px" />
             <h2 className="font-medium text-4xl font-[FairyMuffin]">Recommended anime live</h2>
           </div>

@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 
 export const GradientIcon = ({ children, focus }: { children: React.ReactElement; focus?: boolean }) => {
   return (
