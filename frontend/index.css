@@ -72,11 +72,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-[#FAFAFA];
-  }
-
-  #root {
-    @apply flex flex-col min-h-screen;
+    @apply bg-[#FAFAFA] max-h-screen overflow-hidden;
   }
 
   .primary {

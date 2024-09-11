@@ -38,11 +38,11 @@ const actions = [
 
 function App() {
   return (
-    <>
+    <div className="flex flex-col">
       <Header />
-      <main className="flex h-full flex-grow">
-        <section className="flex flex-col gap-4 min-w-[300px] px-4 justify-between mb-6">
-          <div className="w-full flex-grow">
+      <main className="flex flex-grow overflow-hidden">
+        <section className="flex flex-col min-h-full gap-4 min-w-[300px] px-4 justify-between mb-6">
+          <div className="w-full">
             <h3 className="uppercase text-lg font-bold text-[FairyMuffin] mb-2">Recommended channels</h3>
             <div className="flex flex-col gap-3">
               <RecommendChannel channel={channel} />
@@ -61,11 +61,11 @@ function App() {
             ))}
           </div>
         </section>
-        <section className="flex flex-col flex-grow">
+        <section className="h-full overflow-hidden">
           <Outlet />
         </section>
       </main>
-    </>
+    </div>
   );
 }
 
