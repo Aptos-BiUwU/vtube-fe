@@ -11,6 +11,7 @@ import { WalletProvider } from "@/components/WalletProvider.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/home/page";
 import LivestreamPage from "./pages/live/[id]/page";
+import ProfilePage from "./pages/profile/[id]/page";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
       {
         path: "/live/:channel",
         element: <LivestreamPage />,
+      },
+      {
+        path: "/profile/:id",
+        element: <ProfilePage />,
       },
     ],
   },

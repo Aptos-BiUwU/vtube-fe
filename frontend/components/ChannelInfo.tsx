@@ -6,6 +6,7 @@ type ChannelInfoProps = {
     name: string;
     avatar: string;
     game: string;
+    level?: number;
   };
 };
 
@@ -17,7 +18,12 @@ export default function ChannelInfo({ channel }: ChannelInfoProps) {
         <AvatarFallback>X</AvatarFallback>
       </Avatar>
       <div>
-        <h4 className="text-[FairyMuffin] font-bold text-lg">{channel.name}</h4>
+        <div className="flex items-center gap-4">
+          <h4 className="font-[FairyMuffin] font-bold text-s">{channel.name}</h4>
+          {channel.level && (
+            <span className="py-[0.5px] font-bold px-3 gradient rounded-full glow">lv. {channel.level}</span>
+          )}
+        </div>
         <p className="font-bold text-[#B9B9B9]">{channel.game}</p>
       </div>
     </div>

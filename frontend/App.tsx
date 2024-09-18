@@ -38,7 +38,7 @@ const actions = [
 
 function App() {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col min-h-screen max-h-screen">
       <Header />
       <main className="flex flex-grow overflow-hidden">
         <section className="flex flex-col min-h-full gap-4 min-w-[300px] px-4 justify-between mb-6">
