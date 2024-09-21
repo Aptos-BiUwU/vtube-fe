@@ -2,7 +2,7 @@ import IceCream from "@/assets/images/icecream.png";
 import ChannelInfo from "@/components/ChannelInfo";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Facebook, Gift, Heart, Laugh, SendHorizonal, Twitter } from "lucide-react";
+import { Facebook, Gift, Heart, Laugh, Radio, SendHorizonal, Twitter } from "lucide-react";
 import Youtube from "@/assets/icons/youtube.svg?react";
 import Discord from "@/assets/icons/discord.svg?react";
 import Rank1 from "@/assets/icons/rank1.svg?react";
@@ -11,6 +11,7 @@ import Rank3 from "@/assets/icons/rank3.svg?react";
 import { Separator } from "@/components/ui/separator";
 import Message from "@/components/Message";
 import { Input } from "@/components/ui/input";
+import { Switch } from "@/components/ui/switch";
 
 export default function LivestreamPage() {
   return (
@@ -44,7 +45,11 @@ export default function LivestreamPage() {
           </div>
           <img src={IceCream} />
         </div>
-        <div className="w-full aspect-video bg-[#DEDEDE] rounded-lg mb-4"></div>
+        <div className="relative w-full aspect-video bg-[#DEDEDE] rounded-lg mb-4">
+          <div className="absolute right-2 bottom-3">
+            <Switch className="data-[state=unchecked]:bg-[#B9B9B9]" />
+          </div>
+        </div>
         <div className="flex mb-2">
           <ChannelInfo channel={{ id: "1", name: "Shad", avatar: "", game: "League of Legends" }} />
           <div className="flex gap-4 items-center font-[FairyMuffin]">

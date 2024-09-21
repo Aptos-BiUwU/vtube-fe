@@ -73,7 +73,7 @@ export function WalletSelector() {
   ) : (
     <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
       <DialogTrigger asChild>
-        <Button>Connect a Wallet</Button>
+        <Button className="rounded-full font-[FairyMuffin] text-xl gradient tracking-wide text-black">Sign in</Button>
       </DialogTrigger>
       <ConnectWalletDialog close={closeDialog} />
     </Dialog>
@@ -86,71 +86,15 @@ interface ConnectWalletDialogProps {
 
 function ConnectWalletDialog({ close }: ConnectWalletDialogProps) {
   const { wallets = [] } = useWallet();
-  const { aptosConnectWallets, availableWallets, installableWallets } = groupAndSortWallets(wallets);
-
-  const hasAptosConnectWallets = !!aptosConnectWallets.length;
+  const { availableWallets } = groupAndSortWallets(wallets);
 
   return (
     <DialogContent className="max-h-screen overflow-auto">
       <AboutAptosConnect renderEducationScreen={renderEducationScreen}>
-        <DialogHeader>
-          <DialogTitle className="flex flex-col text-center leading-snug">
-            {hasAptosConnectWallets ? (
-              <>
-                <span>Log in or sign up</span>
-                <span>with Social + Aptos Connect</span>
-              </>
-            ) : (
-              "Connect Wallet"
-            )}
-          </DialogTitle>
-        </DialogHeader>
-
-        {hasAptosConnectWallets && (
-          <div className="flex flex-col gap-2 pt-3">
-            {aptosConnectWallets.map((wallet) => (
-              <AptosConnectWalletRow key={wallet.name} wallet={wallet} onConnect={close} />
-            ))}
-            <p className="flex gap-1 justify-center items-center text-muted-foreground text-sm">
-              Learn more about{" "}
-              <AboutAptosConnect.Trigger className="flex gap-1 py-3 items-center text-foreground">
-                Aptos Connect <ArrowRight size={16} />
-              </AboutAptosConnect.Trigger>
-            </p>
-            <AptosPrivacyPolicy className="flex flex-col items-center py-1">
-              <p className="text-xs leading-5">
-                <AptosPrivacyPolicy.Disclaimer />{" "}
-                <AptosPrivacyPolicy.Link className="text-muted-foreground underline underline-offset-4" />
-                <span className="text-muted-foreground">.</span>
-              </p>
-              <AptosPrivacyPolicy.PoweredBy className="flex gap-1.5 items-center text-xs leading-5 text-muted-foreground" />
-            </AptosPrivacyPolicy>
-            <div className="flex items-center gap-3 pt-4 text-muted-foreground">
-              <div className="h-px w-full bg-secondary" />
-              Or
-              <div className="h-px w-full bg-secondary" />
-            </div>
-          </div>
-        )}
-
         <div className="flex flex-col gap-3 pt-3">
           {availableWallets.map((wallet) => (
             <WalletRow key={wallet.name} wallet={wallet} onConnect={close} />
           ))}
-          {!!installableWallets.length && (
-            <Collapsible className="flex flex-col gap-3">
-              <CollapsibleTrigger asChild>
-                <Button size="sm" variant="ghost" className="gap-2">
-                  More wallets <ChevronDown />
-                </Button>
-              </CollapsibleTrigger>
-              <CollapsibleContent className="flex flex-col gap-3">
-                {installableWallets.map((wallet) => (
-                  <WalletRow key={wallet.name} wallet={wallet} onConnect={close} />
-                ))}
-              </CollapsibleContent>
-            </Collapsible>
-          )}
         </div>
       </AboutAptosConnect>
     </DialogContent>
