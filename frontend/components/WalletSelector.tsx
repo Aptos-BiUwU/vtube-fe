@@ -3,7 +3,6 @@ import {
   AboutAptosConnect,
   AboutAptosConnectEducationScreen,
   AnyAptosWallet,
-  AptosPrivacyPolicy,
   WalletItem,
   groupAndSortWallets,
   isAptosConnectWallet,
@@ -11,11 +10,10 @@ import {
   truncateAddress,
   useWallet,
 } from "@aptos-labs/wallet-adapter-react";
-import { ArrowLeft, ArrowRight, ChevronDown, Copy, LogOut, User } from "lucide-react";
+import { ArrowLeft, ArrowRight, Copy, LogOut, User } from "lucide-react";
 import { useCallback, useState } from "react";
 // Internal components
 import { Button } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import {
   DropdownMenu,
@@ -126,19 +124,6 @@ function WalletRow({ wallet, onConnect }: WalletRowProps) {
           <Button size="sm">Connect</Button>
         </WalletItem.ConnectButton>
       )}
-    </WalletItem>
-  );
-}
-
-function AptosConnectWalletRow({ wallet, onConnect }: WalletRowProps) {
-  return (
-    <WalletItem wallet={wallet} onConnect={onConnect}>
-      <WalletItem.ConnectButton asChild>
-        <Button size="lg" variant="outline" className="w-full gap-4">
-          <WalletItem.Icon className="h-5 w-5" />
-          <WalletItem.Name className="text-base font-normal" />
-        </Button>
-      </WalletItem.ConnectButton>
     </WalletItem>
   );
 }

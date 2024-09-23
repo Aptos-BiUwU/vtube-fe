@@ -2,7 +2,7 @@ import IceCream from "@/assets/images/icecream.png";
 import ChannelInfo from "@/components/ChannelInfo";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
-import { Facebook, Gift, Heart, Laugh, Radio, SendHorizonal, Twitter } from "lucide-react";
+import { Facebook, Gift, Heart, Laugh, SendHorizonal, Twitter } from "lucide-react";
 import Youtube from "@/assets/icons/youtube.svg?react";
 import Discord from "@/assets/icons/discord.svg?react";
 import Rank1 from "@/assets/icons/rank1.svg?react";
