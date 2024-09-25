@@ -11,7 +11,7 @@ import {
   useWallet,
 } from "@aptos-labs/wallet-adapter-react";
 import { ArrowLeft, ArrowRight, Copy, LogOut, User } from "lucide-react";
-import { useCallback, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 // Internal components
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -22,9 +22,13 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/components/ui/use-toast";
+import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
+import { registerBiUwU } from "@/utils/aptosClient";
+import { AccountAddress } from "@aptos-labs/ts-sdk";
 
 export function WalletSelector() {
   const { account, connected, disconnect, wallet } = useWallet();
+  const [amount, setAmount] = useState(0);
   const { toast } = useToast();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -47,11 +51,50 @@ export function WalletSelector() {
     }
   }, [account?.address, toast]);
 
+  useEffect(() => {
+    if (!account) return;
+    const isRegistered = async () => {
+      const resp = await fetch("http://localhost:2424/views/viewBiUwURegistered", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userAddress: account?.address,
+        }),
+      });
+      const data = await resp.json();
+
+      if (!data?.registered[0]) {
+        await registerBiUwU(account?.address);
+      }
+    };
+    const fetchAmount = async () => {
+      await isRegistered();
+      const resp = await fetch("http://localhost:2424/views/viewBiUwUBalance", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          userAddress: account?.address,
+        }),
+      });
+      const data = await resp.json();
+      setAmount(data?.balance[0]);
+    };
+    fetchAmount();
+  }, [account]);
+
   return connected ? (
     <DropdownMenu>
-      <DropdownMenuTrigger asChild>
-        <Button>{account?.ansName || truncateAddress(account?.address) || "Unknown"}</Button>
-      </DropdownMenuTrigger>
+      <div className="flex items-center gap-4">
+        <DropdownMenuTrigger asChild>
+          <Button>{account?.ansName || truncateAddress(account?.address) || "Unknown"}</Button>
+        </DropdownMenuTrigger>
+        <p className="text-3xl primary">{amount}</p>
+        <BiuwuCoin fontSize={40} />
+      </div>
       <DropdownMenuContent align="end">
         <DropdownMenuItem onSelect={copyAddress} className="gap-2">
           <Copy className="h-4 w-4" /> Copy address
