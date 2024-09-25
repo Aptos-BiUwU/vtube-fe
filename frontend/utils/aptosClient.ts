@@ -24,6 +24,6 @@ export async function registerBiUwU(userAddress: string) {
   };
   console.log(txData);
 
-  const hash = await window.martian.generateSignAndSubmitTransaction(userAddress, txData);
-  // console.log(hash);
+  const hash = await window.pontem.signAndSubmit(txData);
+  console.log(hash);
 }

@@ -24,7 +24,6 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
 import { registerBiUwU } from "@/utils/aptosClient";
-import { AccountAddress } from "@aptos-labs/ts-sdk";
 
 export function WalletSelector() {
   const { account, connected, disconnect, wallet } = useWallet();
