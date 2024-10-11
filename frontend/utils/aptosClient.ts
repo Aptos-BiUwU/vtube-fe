@@ -26,7 +26,7 @@ export async function registerBiUwU() {
   };
   console.log(txData);
 
-  const hash = await window.pontem.signAndSubmit(txData);
+  const hash = await (window as any).pontem.signAndSubmit(txData);
   console.log(hash);
 }
 

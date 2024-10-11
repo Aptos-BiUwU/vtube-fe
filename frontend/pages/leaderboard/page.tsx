@@ -1,15 +1,7 @@
 import RankingStar from "@/assets/icons/ranking_star.svg?react";
 import Crown from "@/assets/icons/crown.svg?react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectLabel,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 function LeaderboardUser({ img, name }: { img: string; name: string }) {
   return (
@@ -33,6 +25,7 @@ export default function LeaderboardPage() {
             <div
               className="absolute bg-[#B7AEA4] -translate-y-full top-0"
               style={{
+                // @ts-ignore
                 "--p": "10px",
                 width: "100%",
                 height: "15px",
@@ -52,6 +45,7 @@ export default function LeaderboardPage() {
             <div
               className="absolute bg-[#FFA500] -translate-y-full top-0"
               style={{
+                // @ts-ignore
                 "--p": "5px",
                 width: "100%",
                 height: "15px",
@@ -70,6 +64,7 @@ export default function LeaderboardPage() {
             <div
               className="absolute bg-[#A24406] -translate-y-full top-0"
               style={{
+                // @ts-ignore
                 "--p": "10px",
                 width: "100%",
                 height: "15px",

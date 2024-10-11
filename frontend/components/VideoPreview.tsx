@@ -6,6 +6,8 @@ type VideoPreviewProps = {
     name: string;
     avatar: string;
     game: string;
+    thumbnailUrl: string;
+    uid: string;
   };
 };
 

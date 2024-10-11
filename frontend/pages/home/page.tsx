@@ -14,7 +14,7 @@ export default function HomePage() {
       </div>
       <div className="grid grid-cols-3 flex-grow w-full">
         {streamers.map((streamer, index) => (
-          <VideoPreview channel={streamer} />
+          <VideoPreview channel={streamer as any} key={index} />
         ))}
       </div>
     </>

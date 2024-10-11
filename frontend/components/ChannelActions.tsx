@@ -39,7 +39,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
     const tx = await getSubcriptionTxData(channel.coinAddress);
     console.log(tx);
 
-    await window.pontem.signAndSubmit(tx);
+    await (window as any).pontem.signAndSubmit(tx);
   };
 
   return (
