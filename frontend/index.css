@@ -80,12 +80,30 @@
     background-image: linear-gradient(45deg, #FF7AE4, #E088FB, #81ACF8);
   }
 
+  .primary-2 {
+    @apply text-transparent inline-block bg-clip-text;
+    background-image: linear-gradient(180deg, #C214FF, #F67BF9, #F2F2F2);
+  }
+
+  .primary-3 {
+    @apply text-transparent inline-block bg-clip-text;
+    background-image: linear-gradient(180deg, #1814FF, #7E7BF9, #F2F2F2);
+  }
+
   .gradient-2 {
     background-image: linear-gradient(45deg, #FF7AE4, #E088FB, #81ACF8);
   }
 
   .gradient {
     background-image: linear-gradient(45deg, rgba(250, 156, 231, var(--tw-bg-opacity)), rgba(220, 158, 239, var(--tw-bg-opacity)), rgba(152, 189, 255, var(--tw-bg-opacity)));
+  }
+
+  .gradient-border {
+    position: relative;
+    padding: 15px; /* Inner padding to create space for the pseudo-element */
+    border-radius: 15px; /* Round corners */
+    background-color: white; /* Background color inside the element */
+    z-index: 1; /* Ensure content appears above the pseudo-element */
   }
 
   .glow {
@@ -111,4 +129,9 @@
 @font-face {
   font-family: 'FairyMuffin';
   src: url('./assets/fonts/Fairymuffin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Cubano';
+  src: url('./assets/fonts/Cubano.otf') format('opentype');
 }

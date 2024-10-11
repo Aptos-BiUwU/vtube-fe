@@ -5,8 +5,10 @@ import DiamondPlus from "@/assets/icons/diamond_plus.svg?react";
 import Inventory from "@/assets/icons/inventory.svg?react";
 import Twitter from "@/assets/icons/twitter.svg?react";
 import Docs from "@/assets/icons/document.svg?react";
+import Ranking from "@/assets/icons/ranking.svg?react";
 import React from "react";
 import { Outlet } from "react-router-dom";
+import { streamers } from "./utils/db";
 
 console.log(Inventory);
 
@@ -18,6 +20,11 @@ const channel = {
 };
 
 const actions = [
+  {
+    icon: <Ranking />,
+    label: "Leaderboard",
+    link: "/leaderboard",
+  },
   {
     icon: <DiamondPlus />,
     label: "Create",
@@ -45,23 +52,25 @@ function App() {
           <div className="w-full">
             <h3 className="uppercase text-lg font-bold text-[FairyMuffin] mb-2">Recommended channels</h3>
             <div className="flex flex-col gap-3">
-              <RecommendChannel channel={channel} />
-              <RecommendChannel channel={channel} />
-              <RecommendChannel channel={channel} />
+              {streamers.map((streamer, index) => (
+                <RecommendChannel key={index} channel={streamer} />
+              ))}
             </div>
           </div>
           <div className="flex flex-col gap-4">
             {actions.map((action, index) => (
               <div key={index} className="flex items-center text-2xl font-[FairyMuffin]">
-                {React.cloneElement(action.icon, { width: "40px", height: "40px" })}
+                {React.cloneElement(action.icon, { width: "32px", height: "32px" })}
                 <Button variant="link">
-                  <span className="text-xl">{action.label}</span>
+                  <a href={action.link} className="text-xl">
+                    {action.label}
+                  </a>
                 </Button>
               </div>
             ))}
           </div>
         </section>
-        <section className="h-full overflow-hidden">
+        <section className="h-full overflow-hidden flex-grow">
           <Outlet />
         </section>
       </main>

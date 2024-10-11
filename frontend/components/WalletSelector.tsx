@@ -23,7 +23,8 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/components/ui/use-toast";
 import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
-import { registerBiUwU } from "@/utils/aptosClient";
+import { fetchAmount, isRegistered, registerBiUwU } from "@/utils/aptosClient";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 
 export function WalletSelector() {
   const { account, connected, disconnect, wallet } = useWallet();
@@ -50,39 +51,31 @@ export function WalletSelector() {
     }
   }, [account?.address, toast]);
 
-  useEffect(() => {
-    if (!account) return;
-    const isRegistered = async () => {
-      const resp = await fetch("http://localhost:2424/views/viewBiUwURegistered", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userAddress: account?.address,
-        }),
-      });
-      const data = await resp.json();
+  const queryClient = useQueryClient();
 
-      if (!data?.registered[0]) {
-        await registerBiUwU(account?.address);
+  const getAmount = useQuery({
+    queryKey: ["amount", account?.address],
+    queryFn: async () => {
+      return fetchAmount(account?.address!);
+    },
+  });
+
+  useEffect(() => {
+    const init = async () => {
+      if (!account) return;
+      console.log(account);
+
+      if (!(await isRegistered(account.address))) {
+        console.log("Registering BiUwU");
+
+        await registerBiUwU();
       }
-    };
-    const fetchAmount = async () => {
-      await isRegistered();
-      const resp = await fetch("http://localhost:2424/views/viewBiUwUBalance", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          userAddress: account?.address,
-        }),
+
+      queryClient.invalidateQueries({
+        queryKey: ["amount", account.address],
       });
-      const data = await resp.json();
-      setAmount(data?.balance[0]);
     };
-    fetchAmount();
+    init();
   }, [account]);
 
   return connected ? (
@@ -91,7 +84,7 @@ export function WalletSelector() {
         <DropdownMenuTrigger asChild>
           <Button>{account?.ansName || truncateAddress(account?.address) || "Unknown"}</Button>
         </DropdownMenuTrigger>
-        <p className="text-3xl primary">{amount}</p>
+        <p className="text-3xl primary">{getAmount.data}</p>
         <BiuwuCoin fontSize={40} />
       </div>
       <DropdownMenuContent align="end">

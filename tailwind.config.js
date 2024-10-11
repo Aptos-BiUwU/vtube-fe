@@ -19,6 +19,7 @@ module.exports = {
         alienWorld: ["AlienWorld"],
         franxurter: ["FranxurterTotally"],
         fairymuffin: ["FairyMuffin"],
+        cubano: ["Cubano"],
       },
       colors: {
         border: "hsl(var(--border))",

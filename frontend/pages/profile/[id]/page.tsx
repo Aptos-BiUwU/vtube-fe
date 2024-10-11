@@ -1,13 +1,17 @@
 import ChannelInfo from "@/components/ChannelInfo";
 import Banner from "@/assets/images/banner.png";
 import { Button } from "@/components/ui/button";
-import { Heart } from "lucide-react";
 import HomeSection from "./home";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import VideosSection from "./videos";
 import AboutSection from "./about";
+import ChannelActions from "@/components/ChannelActions";
+import { streamers } from "@/utils/db";
+import { useParams } from "react-router-dom";
 
 export default function ProfilePage() {
+  const { id } = useParams();
+  const streamer = streamers.find((streamer) => streamer.uid === id);
   return (
     <>
       <div className="overflow-y-scroll overflow-x-visible pl-2" style={{ height: "calc(100vh - 60px)" }}>
@@ -17,23 +21,11 @@ export default function ProfilePage() {
             scrollbarWidth: "none",
           }}
         >
-          <div className="pr-20 w-fit">
+          <div>
             <img src={Banner} className="mx-auto mb-8" />
-            <div className="flex mb-8">
+            <div className="flex mb-8 pr-20">
               <ChannelInfo channel={{ id: "1", name: "Shad", avatar: "", game: "League of Legends", level: 10 }} />
-              <div className="flex gap-4 items-center font-[FairyMuffin]">
-                <div className="rounded-md gradient-2 p-0.5">
-                  <Button variant="outline" className="rounded-sm text-lg">
-                    Join
-                  </Button>
-                </div>
-                <div className="rounded-md gradient-2 p-0.5">
-                  <Button variant="outline" className="text-lg rounded-sm flex items-center">
-                    <Heart size={20} />
-                    Subcribe
-                  </Button>
-                </div>
-              </div>
+              <ChannelActions channel={streamer} />
             </div>
           </div>
           <Tabs defaultValue="home" className="w-full">

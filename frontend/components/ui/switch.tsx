@@ -11,7 +11,7 @@ const Switch = React.forwardRef<
   React.ElementRef<typeof SwitchPrimitives.Root>,
   React.ComponentPropsWithoutRef<typeof SwitchPrimitives.Root>
 >(({ className, ...props }, ref) => {
-  const [isChecked, setIsChecked] = React.useState(false);
+  const [isChecked, setIsChecked] = React.useState(true);
   const handleToggle = () => setIsChecked((prev) => !prev);
   return (
     <SwitchPrimitives.Root
