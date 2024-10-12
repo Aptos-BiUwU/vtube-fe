@@ -138,7 +138,28 @@ export const getSubcriptionTxData = async (coinAddress: string) => {
     },
     body: JSON.stringify({
       coinAddress,
-      tier: 0,
+      tier: 1,
+    }),
+  });
+  const data = await resp.json();
+  console.log(data);
+
+  return {
+    function: data.txData.function,
+    type_arguments: data.txData.typeArguments || [],
+    arguments: data.txData.functionArguments || [],
+  };
+};
+
+export const getDepositTxData = async (coinAddress: string, amount: number) => {
+  const resp = await fetch("http://localhost:2424/transactions/getDepositTxData", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      coinAddress,
+      amount,
     }),
   });
   const data = await resp.json();

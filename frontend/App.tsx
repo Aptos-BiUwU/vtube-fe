@@ -36,10 +36,12 @@ const actions = [
   {
     icon: <Twitter />,
     label: "Twitter",
+    link: "https://x.com/biuwulive",
   },
   {
     icon: <Docs />,
     label: "Docs",
+    link: "https://biuwu.gitbook.io/biuwu-docs",
   },
 ];
 

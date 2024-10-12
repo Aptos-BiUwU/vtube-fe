@@ -24,7 +24,7 @@ export default function ProfilePage() {
           <div>
             <img src={Banner} className="mx-auto mb-8" />
             <div className="flex mb-8 pr-20">
-              <ChannelInfo channel={{ id: "1", name: "Shad", avatar: "", game: "League of Legends", level: 10 }} />
+              <ChannelInfo channel={streamer as any} />
               <ChannelActions channel={streamer} />
             </div>
           </div>

@@ -1,16 +1,19 @@
 import { Check, Heart } from "lucide-react";
 import { Button } from "./ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
+import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
 import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getSubcriptionTxData } from "@/utils/aptosClient";
+import { getDepositTxData, getSubcriptionTxData } from "@/utils/aptosClient";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 type ChannelActionsProps = {
   channel: any;
 };
 
 export default function ChannelActions({ channel }: ChannelActionsProps) {
+  const { account } = useWallet();
+
   const fetchSubscriptionPlan = useQuery({
     queryKey: ["subscription", channel.id],
     queryFn: async () => {
@@ -35,11 +38,43 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
     },
   });
 
-  const subcribe = async () => {
-    const tx = await getSubcriptionTxData(channel.coinAddress);
-    console.log(tx);
+  const fetchSubscriptionStatus = useQuery({
+    queryKey: ["subscriptionStatus", channel.id],
+    queryFn: async () => {
+      const resp = await fetch(`http://localhost:2424/views/viewIsActive`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          coinAddress: channel.coinAddress,
+          userAddress: account.address,
+        }),
+      });
 
+      const data = await resp.json();
+
+      if (!data || resp.status !== 200) {
+        return {
+          subscriptionStatus: 0,
+        };
+      }
+      console.log(data);
+
+      return {
+        subscriptionStatus: data.isActive[0],
+      };
+    },
+  });
+
+  const subcribe = async () => {
+    let tx = await getSubcriptionTxData(channel.coinAddress);
     await (window as any).pontem.signAndSubmit(tx);
+
+    tx = await getDepositTxData(channel.coinAddress, 100);
+    await (window as any).pontem.signAndSubmit(tx);
+
+    fetchSubscriptionStatus.refetch();
   };
 
   return (
@@ -48,7 +83,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
         <DialogTrigger asChild>
           <div className="rounded-md gradient-2 p-0.5">
             <Button variant="outline" className="rounded-sm text-lg">
-              Join
+              {fetchSubscriptionStatus.data?.subscriptionStatus ? "Joined" : "Join"}
             </Button>
           </div>
         </DialogTrigger>
@@ -59,7 +94,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
           <div className="flex items-center gap-2">
             <BiuwuCoin fontSize={35} />
             <p className="font-[Poppins] texl-2xl">
-              <span className="text-4xl font-bold">{fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][0]}</span> per
+              <span className="text-4xl font-bold">{fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]}</span> per
               month
             </p>
           </div>
@@ -73,13 +108,15 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
               Exclusive content
             </li>
           </ul>
-          <Button
-            onClick={() => {
-              subcribe();
-            }}
-          >
-            Join now!
-          </Button>
+          <DialogClose>
+            <Button
+              onClick={() => {
+                subcribe();
+              }}
+            >
+              Join now!
+            </Button>
+          </DialogClose>
         </DialogContent>
       </Dialog>
       <div className="rounded-md gradient-2 p-0.5">
