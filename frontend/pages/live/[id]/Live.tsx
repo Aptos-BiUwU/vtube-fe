@@ -62,7 +62,7 @@ export default function LivePage({ channelInfo }: LivePageProps) {
   const fetchSubscriptionStatus = useQuery({
     queryKey: ["subscriptionStatus", channelInfo.uid],
     queryFn: async () => {
-      const resp = await fetch(`http://localhost:2424/views/viewIsActive`, {
+      const resp = await fetch(`http://140.245.117.232:2424/views/viewIsActive`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

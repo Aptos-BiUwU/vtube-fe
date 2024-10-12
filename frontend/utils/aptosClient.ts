@@ -11,7 +11,7 @@ export function aptosClient() {
 }
 
 export async function registerBiUwU() {
-  const resp = await fetch("http://localhost:2424/transactions/getRegisterBiUwUTxData", {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getRegisterBiUwUTxData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export async function registerBiUwU() {
 }
 
 export const isRegistered = async (account: string) => {
-  const resp = await fetch("http://localhost:2424/views/viewBiUwURegistered", {
+  const resp = await fetch("http://140.245.117.232:2424/views/viewBiUwURegistered", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +49,7 @@ export const isRegistered = async (account: string) => {
 
 export const fetchAmount = async (account: string) => {
   await isRegistered(account);
-  const resp = await fetch("http://localhost:2424/views/viewBiUwUBalance", {
+  const resp = await fetch("http://140.245.117.232:2424/views/viewBiUwUBalance", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -64,7 +64,7 @@ export const fetchAmount = async (account: string) => {
 };
 
 export const fetchCampaign = async (id: string): Promise<Campaign> => {
-  const resp = await fetch("http://localhost:2424/views/viewCampaignInfo", {
+  const resp = await fetch("http://140.245.117.232:2424/views/viewCampaignInfo", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -88,7 +88,7 @@ export const fetchCampaign = async (id: string): Promise<Campaign> => {
 };
 
 export const getDonateTxData = async (id: string, amount: string) => {
-  const resp = await fetch("http://localhost:2424/transactions/getDonateTxData", {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getDonateTxData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -109,7 +109,7 @@ export const getDonateTxData = async (id: string, amount: string) => {
 };
 
 export const getBattleTxData = async (battleId: string, amount: string, side: boolean) => {
-  const resp = await fetch("http://localhost:2424/transactions/getAttackTxData", {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getAttackTxData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -131,7 +131,7 @@ export const getBattleTxData = async (battleId: string, amount: string, side: bo
 };
 
 export const getSubcriptionTxData = async (coinAddress: string) => {
-  const resp = await fetch("http://localhost:2424/transactions/getUpdateTierTxData", {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getUpdateTierTxData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -152,7 +152,7 @@ export const getSubcriptionTxData = async (coinAddress: string) => {
 };
 
 export const getDepositTxData = async (coinAddress: string, amount: number) => {
-  const resp = await fetch("http://localhost:2424/transactions/getDepositTxData", {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getDepositTxData", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

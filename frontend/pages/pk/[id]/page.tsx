@@ -35,7 +35,7 @@ export default function BattlePage({ streamer }: BattlePageProps) {
   const getBattle = useQuery({
     queryKey: ["battle", streamer.battleId],
     queryFn: async () => {
-      const resp = await fetch(`http://localhost:2424/views/viewBattleInfo`, {
+      const resp = await fetch(`http://140.245.117.232:2424/views/viewBattleInfo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
   const fetchSubscriptionPlan = useQuery({
     queryKey: ["subscription", channel.id],
     queryFn: async () => {
-      const resp = await fetch(`http://localhost:2424/views/viewSubscriptionPlanInfo`, {
+      const resp = await fetch(`http://140.245.117.232:2424/views/viewSubscriptionPlanInfo`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
   const fetchSubscriptionStatus = useQuery({
     queryKey: ["subscriptionStatus", channel.id],
     queryFn: async () => {
-      const resp = await fetch(`http://localhost:2424/views/viewIsActive`, {
+      const resp = await fetch(`http://140.245.117.232:2424/views/viewIsActive`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
