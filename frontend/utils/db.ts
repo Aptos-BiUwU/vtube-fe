@@ -12,7 +12,7 @@ export const streamers = [
       "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
     thumbnailUrl:
       "https://i.ytimg.com/vi/cGM_RapPy28/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD_n30uDwWlDuQqv9l6l_GGRmcmlA",
-    isPrivate: true,
+    // isPrivate: true,
   },
   {
     wallet: "0x78f4a3964fdd729150b897d8f55f1cc10ccc392b3739d3364c496f17ede3b1f3",
@@ -44,5 +44,38 @@ export const tokens = [
     symbol: "WDU",
     address: "0x78f4a3964fdd729150b897d8f55f1cc10ccc392b3739d3364c496f17ede3b1f3",
     name: "Wildeuth Token",
+  },
+];
+
+export const chats = [
+  {
+    uid: "hikuso",
+    messages: [
+      {
+        id: "1",
+        sender: "hikuso",
+        content: "Hello",
+        timestamp: "2022-03-01T08:00:00Z",
+      },
+      {
+        id: "2",
+        sender: "wildeuth",
+        content: "Hi",
+        timestamp: "2022-03-01T08:01:00Z",
+      },
+      {
+        id: "3",
+        sender: "hikuso",
+        content: "How are you?",
+        timestamp: "2022-03-01T08:02:00Z",
+      },
+    ],
+  },
+];
+
+export const users = [
+  {
+    wallet: "0x49f8b871ea822a0502eef51e4ce5575e55ce0efadf2b64b946dc316566d10051",
+    name: "winprn",
   },
 ];

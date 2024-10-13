@@ -21,7 +21,9 @@ export default function ChannelInfo({ channel, reverse }: ChannelInfoProps) {
       </Avatar>
       <div>
         <div className="flex items-center gap-4">
-          <h4 className={cn("font-[FairyMuffin] font-bold text-s", reverse ? "ml-auto" : "")}>{channel.name}</h4>
+          <a href={`/profile/${channel.uid}`}>
+            <h4 className={cn("font-[FairyMuffin] font-bold text-s", reverse ? "ml-auto" : "")}>{channel.name}</h4>
+          </a>
           {channel.level && (
             <span className="py-[0.5px] font-bold px-3 gradient rounded-full glow">lv. {channel.level}</span>
           )}

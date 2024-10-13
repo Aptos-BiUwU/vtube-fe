@@ -7,9 +7,7 @@ import GiftStar from "@/assets/icons/gift_star.png";
 import GiftMeow from "@/assets/icons/gift_meow.png";
 import GiftGhost from "@/assets/icons/gift_ghost.png";
 import GiftJdok from "@/assets/icons/gift_jdok.png";
-import { useWallet } from "@aptos-labs/wallet-adapter-react";
-import { getDonateTxData } from "@/utils/aptosClient";
-import { useQueryClient } from "@tanstack/react-query";
+import { useState } from "react";
 
 type ChatProps = {
   wallet?: string;
@@ -17,6 +15,7 @@ type ChatProps = {
     (amount: string): void;
     (amount: string, side: string): void;
   };
+  sendChat?: (message: string) => void;
 };
 
 const gifts = [
@@ -42,15 +41,26 @@ const gifts = [
   },
 ];
 
-export default function Chat({ wallet, sendDonate }: ChatProps) {
+export default function Chat({ sendDonate, sendChat }: ChatProps) {
+  const [message, setMessage] = useState("");
+
   return (
     <div className="mb-4 mx-2 pt-4 min-h-fit mt-auto">
       <div className="relative">
         <Input
           placeholder="Send message..."
           className="mb-2 pr-32 rounded-lg text-lg placeholder:font-[FairyMuffin] placeholder:text-[#B9B9B9] border-4 py-6 border-[#FFF2FC] shadow-[0_0px_10px_0px_rgba(250,156,231,1)]"
+          onChange={(e) => setMessage(e.target.value)}
+          value={message}
         />
-        <Button className="absolute right-0 top-[50%] transform translate-y-[-50%]" variant="ghost">
+        <Button
+          onClick={() => {
+            sendChat(message);
+            setMessage("");
+          }}
+          className="absolute right-0 top-[50%] transform translate-y-[-50%]"
+          variant="ghost"
+        >
           <SendHorizonal size={30} />
         </Button>
       </div>
