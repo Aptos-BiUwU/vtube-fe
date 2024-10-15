@@ -1,11 +1,11 @@
 import { Header } from "@/components/Header";
 import { RecommendChannel } from "./components/RecommendChannel";
 import { Button } from "./components/ui/button";
-import DiamondPlus from "@/assets/icons/diamond_plus.svg?react";
-import Inventory from "@/assets/icons/inventory.svg?react";
-import Twitter from "@/assets/icons/twitter.svg?react";
-import Docs from "@/assets/icons/document.svg?react";
-import Ranking from "@/assets/icons/ranking.svg?react";
+import DiamondPlus from "@/public/assets/icons/diamond_plus.svg?react";
+import Inventory from "@/public/assets/icons/inventory.svg?react";
+import Twitter from "@/public/assets/icons/twitter.svg?react";
+import Docs from "@/public/assets/icons/document.svg?react";
+import Ranking from "@/public/assets/icons/ranking.svg?react";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { streamers } from "./utils/db";

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import Swap from "@/assets/icons/swap.svg?react";
+import Swap from "@/public/assets/icons/swap.svg?react";
 import { useState } from "react";
 import { tokens } from "@/utils/db";
 import { Input } from "@/components/ui/input";

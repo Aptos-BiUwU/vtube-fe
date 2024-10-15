@@ -1,13 +1,13 @@
-import IceCream from "@/assets/images/icecream.png";
+import IceCream from "@/public/assets/images/icecream.png";
 import ChannelInfo from "@/components/ChannelInfo";
 import { Button } from "@/components/ui/button";
 import { Progress } from "@/components/ui/progress";
 import { Facebook, Heart, Twitter } from "lucide-react";
-import Youtube from "@/assets/icons/youtube.svg?react";
-import Discord from "@/assets/icons/discord.svg?react";
-import Rank1 from "@/assets/icons/rank1.svg?react";
-import Rank2 from "@/assets/icons/rank2.svg?react";
-import Rank3 from "@/assets/icons/rank3.svg?react";
+import Youtube from "@/public/assets/icons/youtube.svg?react";
+import Discord from "@/public/assets/icons/discord.svg?react";
+import Rank1 from "@/public/assets/icons/rank1.svg?react";
+import Rank2 from "@/public/assets/icons/rank2.svg?react";
+import Rank3 from "@/public/assets/icons/rank3.svg?react";
 import { Separator } from "@/components/ui/separator";
 import Message from "@/components/Message";
 

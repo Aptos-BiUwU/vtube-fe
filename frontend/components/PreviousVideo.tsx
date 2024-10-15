@@ -1,4 +1,4 @@
-import Avatar from "@/assets/images/avatar.png";
+import Avatar from "@/public/assets/images/avatar.png";
 
 type PreviousVideoProps = {
   thumbnail: string;

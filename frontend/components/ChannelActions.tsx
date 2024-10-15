@@ -1,7 +1,7 @@
 import { Check, Heart } from "lucide-react";
 import { Button } from "./ui/button";
 import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "./ui/dialog";
-import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
+import BiuwuCoin from "@/public/assets/icons/biuwu_coin.svg?react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import { getDepositTxData, getSubcriptionTxData } from "@/utils/aptosClient";

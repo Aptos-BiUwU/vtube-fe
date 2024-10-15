@@ -3,10 +3,10 @@ import { Input } from "@/components/ui/input";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuTrigger } from "./ui/dropdown-menu";
 import Gift from "./Gift";
-import GiftStar from "@/assets/icons/gift_star.png";
-import GiftMeow from "@/assets/icons/gift_meow.png";
-import GiftGhost from "@/assets/icons/gift_ghost.png";
-import GiftJdok from "@/assets/icons/gift_jdok.png";
+import GiftStar from "@/public/assets/icons/gift_star.png";
+import GiftMeow from "@/public/assets/icons/gift_meow.png";
+import GiftGhost from "@/public/assets/icons/gift_ghost.png";
+import GiftJdok from "@/public/assets/icons/gift_jdok.png";
 import { useState } from "react";
 
 type ChatProps = {

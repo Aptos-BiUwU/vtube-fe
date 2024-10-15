@@ -1,5 +1,5 @@
-import Fire from "@/assets/icons/fire.svg?react";
-import Banner from "@/assets/images/banner.png";
+import Fire from "@/public/assets/icons/fire.svg?react";
+import Banner from "@/public/assets/images/banner.png";
 import VideoPreview from "@/components/VideoPreview";
 import { streamers } from "@/utils/db";
 

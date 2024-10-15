@@ -1,5 +1,5 @@
-import RankingStar from "@/assets/icons/ranking_star.svg?react";
-import Crown from "@/assets/icons/crown.svg?react";
+import RankingStar from "@/public/assets/icons/ranking_star.svg?react";
+import Crown from "@/public/assets/icons/crown.svg?react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 

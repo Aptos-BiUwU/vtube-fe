@@ -22,7 +22,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { useToast } from "@/components/ui/use-toast";
-import BiuwuCoin from "@/assets/icons/biuwu_coin.svg?react";
+import BiuwuCoin from "@/public/assets/icons/biuwu_coin.svg?react";
 import { fetchAmount, isRegistered, registerBiUwU } from "@/utils/aptosClient";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 

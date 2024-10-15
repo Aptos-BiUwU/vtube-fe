@@ -1,4 +1,4 @@
-import CollectionImage from "@/assets/images/collection.png";
+import CollectionImage from "@/public/assets/images/collection.png";
 
 type CollectionProps = {
   name: string;

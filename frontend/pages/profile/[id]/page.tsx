@@ -1,5 +1,5 @@
 import ChannelInfo from "@/components/ChannelInfo";
-import Banner from "@/assets/images/banner.png";
+import Banner from "@/public/assets/images/banner.png";
 import { Button } from "@/components/ui/button";
 import HomeSection from "./home";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";

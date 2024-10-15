@@ -1,7 +1,7 @@
 import PreviousVideo from "@/components/PreviousVideo";
-import Hand from "@/assets/icons/hand.svg?react";
-import Grid from "@/assets/icons/grid.svg?react";
-import Suggestion from "@/assets/icons/suggestion.svg?react";
+import Hand from "@/public/assets/icons/hand.svg?react";
+import Grid from "@/public/assets/icons/grid.svg?react";
+import Suggestion from "@/public/assets/icons/suggestion.svg?react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 import Collection from "@/components/Collection";
 import StreamCategory from "@/components/StreamCategory";

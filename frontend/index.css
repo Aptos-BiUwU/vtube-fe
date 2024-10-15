@@ -113,25 +113,25 @@
 
 @font-face {
   font-family: 'Bulzing';
-  src: url('./assets/fonts/Bulzing.ttf') format('truetype');
+  src: url('./public/assets/fonts/Bulzing.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'AlienWorld';
-  src: url('./assets/fonts/AlienWorld.ttf') format('truetype');
+  src: url('./public/assets/fonts/AlienWorld.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FranxurterTotally';
-  src: url('./assets/fonts/FranxurterTotally.ttf') format('truetype');
+  src: url('./public/assets/fonts/FranxurterTotally.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'FairyMuffin';
-  src: url('./assets/fonts/Fairymuffin.ttf') format('truetype');
+  src: url('./public/assets/fonts/Fairymuffin.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'Cubano';
-  src: url('./assets/fonts/Cubano.otf') format('opentype');
+  src: url('./public/assets/fonts/Cubano.otf') format('opentype');
 }
