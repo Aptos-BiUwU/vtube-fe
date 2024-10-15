@@ -8,6 +8,7 @@ type ChannelInfoProps = {
     avatar: string;
     game: string;
     level?: number;
+    uid?: string;
   };
   reverse?: boolean;
 };

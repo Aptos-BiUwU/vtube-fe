@@ -14,11 +14,11 @@ export default function VideosSection() {
           scrollbarWidth: "none",
         }}
       >
+        {/* <PreviousVideo />
         <PreviousVideo />
         <PreviousVideo />
         <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
+        <PreviousVideo /> */}
       </div>
       <div className="flex items-end gap-4 font-[FairyMuffin] mb-4">
         <h3 className="text-2xl">All broadcasts</h3>
@@ -31,11 +31,11 @@ export default function VideosSection() {
           scrollbarWidth: "none",
         }}
       >
+        {/* <PreviousVideo />
         <PreviousVideo />
         <PreviousVideo />
         <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
+        <PreviousVideo /> */}
       </div>
     </>
   );

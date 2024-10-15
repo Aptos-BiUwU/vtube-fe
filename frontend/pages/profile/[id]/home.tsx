@@ -10,7 +10,12 @@ import SuggestStreamer from "@/components/SuggestStreamer";
 
 const header = ["Token name", "Price", "1 hour", "1 day", "FDV", "Volume"];
 
-export default function HomeSection({ videos, token }) {
+type HomeSectionProps = {
+  videos: any[];
+  token: any;
+};
+
+export default function HomeSection({ videos, token }: HomeSectionProps) {
   return (
     <>
       <div
