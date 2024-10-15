@@ -22,7 +22,7 @@ export default function ProfilePage() {
           }}
         >
           <div>
-            <img src={Banner} className="mx-auto mb-8" />
+            <img src={streamer.banner} className="mx-auto mb-8" />
             <div className="flex mb-8 pr-20">
               <ChannelInfo channel={streamer as any} />
               <ChannelActions channel={streamer} />
@@ -56,7 +56,7 @@ export default function ProfilePage() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="home">
-              <HomeSection />
+              <HomeSection videos={streamer.recentStreams} token={streamer.token} />
             </TabsContent>
             <TabsContent value="videos">
               <VideosSection />

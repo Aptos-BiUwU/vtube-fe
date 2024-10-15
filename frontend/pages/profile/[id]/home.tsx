@@ -10,7 +10,7 @@ import SuggestStreamer from "@/components/SuggestStreamer";
 
 const header = ["Token name", "Price", "1 hour", "1 day", "FDV", "Volume"];
 
-export default function HomeSection() {
+export default function HomeSection({ videos, token }) {
   return (
     <>
       <div
@@ -20,11 +20,16 @@ export default function HomeSection() {
           scrollbarWidth: "none",
         }}
       >
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
+        {videos.map((video, index) => (
+          <PreviousVideo
+            key={index}
+            thumbnail={video.thumbnail}
+            name={video.name}
+            duration={video.duration}
+            views={video.views}
+            time={video.time}
+          />
+        ))}
       </div>
       <div className="pr-20 mb-8">
         <SectionTitle icon={<Hand />} title="Fan token" />
@@ -49,13 +54,13 @@ export default function HomeSection() {
             <TableBody className="border-t-0">
               <TableRow className="!border-t-0 !text-lg !font-bold !font-[Poppins]">
                 <TableCell>
-                  Ethereum <span className="text-gray-400">ETH</span>
+                  {token.name} <span className="text-gray-400">{token.symbol}</span>
                 </TableCell>
-                <TableCell>$2,425</TableCell>
-                <TableCell>0.2%</TableCell>
-                <TableCell>0.2%</TableCell>
-                <TableCell>$6,5B</TableCell>
-                <TableCell>$700,5M</TableCell>
+                <TableCell>{token.price}</TableCell>
+                <TableCell className={token.hour < "0" ? "text-red-500" : "text-green-500"}>{token.hour}%</TableCell>
+                <TableCell className={token.day < "0" ? "text-red-500" : "text-green-500"}>{token.day}%</TableCell>
+                <TableCell>{token.fdv}</TableCell>
+                <TableCell>{token.volume}</TableCell>
               </TableRow>
             </TableBody>
           </Table>

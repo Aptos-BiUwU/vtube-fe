@@ -5,7 +5,12 @@ import { streamers } from "@/utils/db";
 
 export default function HomePage() {
   return (
-    <>
+    <div
+      className="overflow-scroll pb-4"
+      style={{
+        height: "calc(100vh - 60px)",
+      }}
+    >
       <img src={Banner} className="mx-auto mb-8" />
       <div className="flex gap-2 items-center mb-4">
         {/* @ts-ignore */}
@@ -17,6 +22,6 @@ export default function HomePage() {
           <VideoPreview channel={streamer as any} key={index} />
         ))}
       </div>
-    </>
+    </div>
   );
 }
