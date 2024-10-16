@@ -10,7 +10,7 @@ export function aptosClient() {
   return aptos;
 }
 
-export async function registerBiUwU() {
+export async function registerBiUwU(account: string) {
   const resp = await fetch("http://140.245.117.232:2424/transactions/getRegisterBiUwUTxData", {
     method: "POST",
     headers: {
@@ -26,7 +26,7 @@ export async function registerBiUwU() {
   };
   console.log(txData);
 
-  const hash = await (window as any).pontem.signAndSubmit(txData);
+  const hash = await (window as any).aptos.signAndSubmitTransaction(txData);
   console.log(hash);
 }
 

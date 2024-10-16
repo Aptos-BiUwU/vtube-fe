@@ -5,7 +5,7 @@ export const streamers = [
     uid: "mika",
     campaign: "0",
     banner: "/frontend/public/assets/images/mika_banner.png",
-    coinAddress: "0x9eebc6d4fd710518d91ef103a34518a39e5dbdd744914905bcad27f4365de0ea",
+    coinAddress: "0x11187299e3764343024296aea35cadc854eb0dff01b9d9647234a27aadcf78b4",
     battleId: "0",
     streamUrl: "/frontend/public/assets/video/mika.mp4",
     game: "Chating",
@@ -65,7 +65,7 @@ export const streamers = [
     name: "Hoshino",
     uid: "hoshino",
     campaign: "1",
-    coinAddress: "0xdccf245315f44423551173dbf650cf61d9469d78606d35b9b9bdc47347f85522",
+    coinAddress: "0x5c06977a52a6d2390bd5368151ce8fd19e5f50e0c3512e69bd8247d8274e397c",
     banner: "/frontend/public/assets/images/hoshino_banner.png",
     battleId: "0",
     streamUrl: "/frontend/public/assets/video/hoshino.mp4",
@@ -140,12 +140,12 @@ export const tokens = [
   },
   {
     symbol: "MIK",
-    address: "0x9eebc6d4fd710518d91ef103a34518a39e5dbdd744914905bcad27f4365de0ea",
+    address: "0x11187299e3764343024296aea35cadc854eb0dff01b9d9647234a27aadcf78b4",
     name: "Mika Token",
   },
   {
-    symbol: "WDU",
-    address: "0xdccf245315f44423551173dbf650cf61d9469d78606d35b9b9bdc47347f85522",
+    symbol: "HSN",
+    address: "0x5c06977a52a6d2390bd5368151ce8fd19e5f50e0c3512e69bd8247d8274e397c",
     name: "Hoshino Token",
   },
 ];

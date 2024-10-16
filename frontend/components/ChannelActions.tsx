@@ -69,10 +69,10 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
 
   const subcribe = async () => {
     let tx = await getSubcriptionTxData(channel.coinAddress);
-    await (window as any).pontem.signAndSubmit(tx);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
 
     tx = await getDepositTxData(channel.coinAddress, 100);
-    await (window as any).pontem.signAndSubmit(tx);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
 
     fetchSubscriptionStatus.refetch();
   };

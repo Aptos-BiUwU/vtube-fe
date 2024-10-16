@@ -14,7 +14,7 @@ export default function SwapTokenPage() {
 
   const swap = async () => {
     const tx = await getSwapTxData(sellToken, buyToken, sellValue, true);
-    await (window as any).pontem.signAndSubmit(tx);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
   };
 
   return (

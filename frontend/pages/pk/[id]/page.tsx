@@ -26,7 +26,7 @@ export default function BattlePage({ streamer }: BattlePageProps) {
   const attack = async (amount: string) => {
     const tx = await getBattleTxData(streamer.battleId, amount, side);
     console.log(tx);
-    await (window as any).pontem.signAndSubmit(tx);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
     queryClient.invalidateQueries({
       queryKey: ["battle", streamer.battleId],
     });

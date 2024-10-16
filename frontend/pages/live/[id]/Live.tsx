@@ -54,7 +54,7 @@ export default function LivePage({ channelInfo }: LivePageProps) {
     const tx = await getDonateTxData(channelInfo?.campaign!, amount);
     console.log(tx);
 
-    await (window as any).pontem.signAndSubmit(tx);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
     queryClient.invalidateQueries({
       queryKey: ["campaign", channelInfo?.campaign],
     });
