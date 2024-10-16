@@ -10,7 +10,7 @@ export function aptosClient() {
   return aptos;
 }
 
-export async function registerBiUwU(account: string) {
+export async function registerBiUwU() {
   const resp = await fetch("http://140.245.117.232:2424/transactions/getRegisterBiUwUTxData", {
     method: "POST",
     headers: {
