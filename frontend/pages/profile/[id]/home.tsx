@@ -150,7 +150,7 @@ export default function HomeSection({ name, videos, token }: HomeSectionProps) {
         <SectionTitle icon={<Grid />} title="Recently streamed categories" />
         <div className="flex gap-2">
           {Array.from(getRandomCategory()).map((category, index) => (
-            <StreamCategory key={index} name={category.name} image={category.image} />
+            <StreamCategory key={index} name={(category as any).name} image={(category as any).image} />
           ))}
         </div>
       </div>
