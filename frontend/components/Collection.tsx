@@ -14,7 +14,8 @@ export default function Collection({ name, floor, volume, image, small }: Collec
   return (
     <div
       className={cn(
-        "flex flex-col overflow-auto justify-between glow p-3 mb-2 rounded-lg w-[300px] min-h-full font-[FairyMuffin] text-left",
+        "flex flex-col overflow-auto justify-between glow rounded-lg w-[300px] min-h-full font-[FairyMuffin] text-left",
+        small ? "p-3 mb-2" : "",
       )}
     >
       <img src={image} className="object-cover object-left grow" />

@@ -17,7 +17,7 @@ export const streamers = [
     recentStreams: [
       {
         thumbnail:
-          "https://i.ytimg.com/an_webp/SWNJiH37OuM/mqdefault_6s.webp?du=3000&sqp=CJKqubgG&rs=AOn4CLBLLb_J2QzaC3DT6kyvWjWRicewwQ",
+          "https://i.ytimg.com/vi/SWNJiH37OuM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCT2Fu79g_gEmAVj3hLcTC40OmOkw",
         name: "Chatting with viewers",
         duration: "1:26:00",
         views: "1.2k",
@@ -33,7 +33,7 @@ export const streamers = [
       },
       {
         thumbnail:
-          "https://i.ytimg.com/an_webp/Mb23K6YIREU/mqdefault_6s.webp?du=3000&sqp=COy0ubgG&rs=AOn4CLDp1azHj65LQhoTjTbD2PrIlxxXMg",
+          "https://i.ytimg.com/vi/Q_8JV73NKRM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0DK1VDkbAAufdZlfMKeir3wmvNw",
         name: "Fighting boss",
         duration: "1:00:00",
         views: "1.5k",
@@ -41,7 +41,7 @@ export const streamers = [
       },
       {
         thumbnail:
-          "https://i.ytimg.com/an_webp/Mb23K6YIREU/mqdefault_6s.webp?du=3000&sqp=COy0ubgG&rs=AOn4CLDp1azHj65LQhoTjTbD2PrIlxxXMg",
+          "https://i.ytimg.com/vi/Q_8JV73NKRM/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB0DK1VDkbAAufdZlfMKeir3wmvNw",
         name: "Fighting boss",
         duration: "1:00:00",
         views: "1.5k",
@@ -77,7 +77,7 @@ export const streamers = [
     recentStreams: [
       {
         thumbnail:
-          "https://i.ytimg.com/an_webp/3mvLJ8I6-6s/mqdefault_6s.webp?du=3000&sqp=CIetubgG&rs=AOn4CLARWRjI1l9lWdzUX4yt_uLd4vqkPg",
+          "https://i.ytimg.com/vi/obrj7cmE26g/hq720.jpg?sqp=-oaymwEcCNAFEJQDSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCQbpbpuBfxKNJTTK1h98RCFR30BA",
         name: "New challenges",
         duration: "2:03:11",
         views: "135k",
