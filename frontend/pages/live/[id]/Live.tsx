@@ -169,11 +169,7 @@ export default function LivePage({ channelInfo }: LivePageProps) {
         </div>
         <div className="flex flex-col gap-2">
           <h3 className="text-2xl uppercase font-[FairyMuffin]">About me</h3>
-          <p className="text-xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam totam deleniti labore. Iusto facere
-            doloremque quis perferendis, maiores nesciunt, aliquam asperiores, voluptatum ut voluptate reprehenderit
-            laboriosam rem harum numquam magni!
-          </p>
+          <p className="text-xl">{channelInfo.about}</p>
           <div className="flex items-center gap-8 mb-4">
             <Button className="gradient-2 aspect-square w-[60px] shadow-[0_0px_10px_0px_rgba(250,156,231,1)] rounded-2xl h-[60px]">
               <Youtube height="35px" width="35px" />
@@ -195,15 +191,15 @@ export default function LivePage({ channelInfo }: LivePageProps) {
         <div className="flex gap-4 mb-2">
           <div className="flex items-center gap-2">
             <Rank1 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">wildeuth</p>
           </div>
           <div className="flex items-center gap-2">
             <Rank2 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">winprn</p>
           </div>
           <div className="flex items-center gap-2">
             <Rank3 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">lanhff</p>
           </div>
         </div>
         <Separator className="bg-[#B9B9B9]" />

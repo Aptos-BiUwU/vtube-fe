@@ -1,6 +1,10 @@
 import PreviousVideo from "@/components/PreviousVideo";
 
-export default function VideosSection() {
+type VideosSectionProps = {
+  videos: any[];
+};
+
+export default function VideosSection({ videos }: VideosSectionProps) {
   return (
     <>
       <div className="flex items-end gap-4 font-[FairyMuffin] mb-4">
@@ -14,11 +18,16 @@ export default function VideosSection() {
           scrollbarWidth: "none",
         }}
       >
-        {/* <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo /> */}
+        {videos.map((video, index) => (
+          <PreviousVideo
+            key={index}
+            thumbnail={video.thumbnail}
+            name={video.name}
+            duration={video.duration}
+            views={video.views}
+            time={video.time}
+          />
+        ))}
       </div>
       <div className="flex items-end gap-4 font-[FairyMuffin] mb-4">
         <h3 className="text-2xl">All broadcasts</h3>
@@ -31,11 +40,16 @@ export default function VideosSection() {
           scrollbarWidth: "none",
         }}
       >
-        {/* <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo />
-        <PreviousVideo /> */}
+        {videos.map((video, index) => (
+          <PreviousVideo
+            key={index}
+            thumbnail={video.thumbnail}
+            name={video.name}
+            duration={video.duration}
+            views={video.views}
+            time={video.time}
+          />
+        ))}
       </div>
     </>
   );

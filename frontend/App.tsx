@@ -6,6 +6,7 @@ import Inventory from "@/public/assets/icons/inventory.svg?react";
 import Twitter from "@/public/assets/icons/twitter.svg?react";
 import Docs from "@/public/assets/icons/document.svg?react";
 import Ranking from "@/public/assets/icons/ranking.svg?react";
+import Swap from "@/public/assets/icons/swap.svg?react";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { streamers } from "./utils/db";
@@ -20,6 +21,11 @@ const channel = {
 };
 
 const actions = [
+  {
+    icon: <Swap />,
+    label: "Swap",
+    link: "/swap",
+  },
   {
     icon: <Ranking />,
     label: "Leaderboard",

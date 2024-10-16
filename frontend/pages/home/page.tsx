@@ -17,7 +17,7 @@ export default function HomePage() {
         <Fire width="50px" height="50px" />
         <h2 className="font-medium text-4xl font-[FairyMuffin]">Recommended anime live</h2>
       </div>
-      <div className="grid grid-cols-3 flex-grow w-full">
+      <div className="grid grid-cols-3 flex-grow w-full gap-y-4">
         {streamers.map((streamer, index) => (
           <VideoPreview channel={streamer as any} key={index} />
         ))}

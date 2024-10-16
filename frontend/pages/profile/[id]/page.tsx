@@ -56,13 +56,13 @@ export default function ProfilePage() {
               </TabsTrigger>
             </TabsList>
             <TabsContent value="home">
-              <HomeSection videos={streamer.recentStreams} token={streamer.token} />
+              <HomeSection name={streamer.name} videos={streamer.recentStreams} token={streamer.token} />
             </TabsContent>
             <TabsContent value="videos">
-              <VideosSection />
+              <VideosSection videos={streamer.recentStreams} />
             </TabsContent>
             <TabsContent value="about">
-              <AboutSection name="Shad" />
+              <AboutSection name={streamer.name} about={streamer.about} />
             </TabsContent>
           </Tabs>
         </div>

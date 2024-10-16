@@ -5,7 +5,7 @@ type StreamCategoryProps = {
 
 export default function StreamCategory({ image, name }: StreamCategoryProps) {
   return (
-    <div className="relative inline-block max-w-[250px]">
+    <div className="flex flex-col justify-between max-w-[250px] min-h-full">
       <img
         src={image ? image : "/frontend/assets/images/stream_category.png"}
         alt="Stream Category"

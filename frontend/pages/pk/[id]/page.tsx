@@ -110,31 +110,25 @@ export default function BattlePage({ streamer }: BattlePageProps) {
             />
           </div>
         </div>
-        <div className="flex gap-2">
-          <div className="relative w-full aspect-video bg-[#DEDEDE] rounded-lg mb-4">
+        <div className="flex flex-col gap-2 grow items-center">
+          <div className="flex gap-4 w-2/3 aspect-video rounded-lg mb-4">
+            {!getBattle.isLoading && <ChannelInfo channel={channels[0]} />}
             <video
-              className="absolute inset-0 w-full h-full object-cover rounded-lg"
+              className="inset-0 w-full h-full object-cover rounded-lg"
               src={channels[0]?.streamUrl}
               autoPlay
               muted
             ></video>
           </div>
-          <div className="relative w-full aspect-video bg-[#DEDEDE] rounded-lg mb-4">
+          <div className="flex gap-4 w-2/3 aspect-video bg-[#DEDEDE] rounded-lg mb-4">
             <video
-              className="absolute inset-0 w-full h-full object-cover rounded-lg"
+              className="inset-0 w-full h-full object-cover rounded-lg"
               src={channels[1]?.streamUrl}
               autoPlay
               muted
             ></video>
+            {!getBattle.isLoading && <ChannelInfo reverse channel={channels[1]} />}
           </div>
-        </div>
-        <div className="flex mb-2 justify-between">
-          {!getBattle.isLoading && (
-            <>
-              <ChannelInfo channel={channels[0]} />
-              <ChannelInfo reverse channel={channels[1]} />
-            </>
-          )}
         </div>
       </div>
       <div className="min-w-[350px] max-h-full sticky top-[60px] flex flex-col overflow-hidden">
@@ -142,23 +136,19 @@ export default function BattlePage({ streamer }: BattlePageProps) {
         <div className="flex gap-4 mb-2">
           <div className="flex items-center gap-2">
             <Rank1 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">wildeuth</p>
           </div>
           <div className="flex items-center gap-2">
             <Rank2 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">winprn</p>
           </div>
           <div className="flex items-center gap-2">
             <Rank3 height={30} width={30} />
-            <p className="font-bold text-lg">Mobius</p>
+            <p className="font-bold text-lg">lanhff</p>
           </div>
         </div>
         <Separator className="bg-[#B9B9B9]" />
-        <div className="w-full overflow-auto flex-grow flex flex-col gap-2">
-          {Array.from({ length: 100 }).map((_, index) => (
-            <Message key={index} name="winprn" message="test" />
-          ))}
-        </div>
+        <div className="w-full overflow-auto flex-grow flex flex-col gap-2"></div>
         <Chat wallet="" sendDonate={attack} />
       </div>
     </div>

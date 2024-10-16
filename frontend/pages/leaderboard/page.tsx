@@ -2,6 +2,7 @@ import RankingStar from "@/public/assets/icons/ranking_star.svg?react";
 import Crown from "@/public/assets/icons/crown.svg?react";
 import { Table, TableBody, TableCell, TableHeader, TableRow } from "@/components/ui/table";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { leaderboards } from "@/utils/db";
 
 function LeaderboardUser({ img, name }: { img: string; name: string }) {
   return (
@@ -17,10 +18,7 @@ export default function LeaderboardPage() {
     <div className="flex flex-col gap-10 px-10 mt-10 overflow-scroll" style={{ height: "calc(100vh - 60px)" }}>
       <div className="grid grid-cols-3 mx-auto font-[Cubano] w-1/2 text-white items-end">
         <div>
-          <LeaderboardUser
-            img="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-1/410293532_1174983426809049_4664503484710597704_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=L9oqhHetYbMQ7kNvgEinaI2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=AvoXPKSu147b1T52dG9iIYL&oh=00_AYC3QDnUtdWN-7WzCGtHQbJNpGjJGAW0njJv5gDiYd7kkQ&oe=6709A46C"
-            name="wildeuth"
-          />
+          <LeaderboardUser img={leaderboards[1].avatar} name={leaderboards[1].name} />
           <div className="relative h-[65px] bg-[#E4DFD6] flex items-center justify-center">
             <div
               className="absolute bg-[#B7AEA4] -translate-y-full top-0"
@@ -37,10 +35,7 @@ export default function LeaderboardPage() {
         </div>
         <div className="relative">
           <Crown className="absolute right-10 top-6" fontSize={50} />
-          <LeaderboardUser
-            img="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-1/410293532_1174983426809049_4664503484710597704_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=L9oqhHetYbMQ7kNvgEinaI2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=AvoXPKSu147b1T52dG9iIYL&oh=00_AYC3QDnUtdWN-7WzCGtHQbJNpGjJGAW0njJv5gDiYd7kkQ&oe=6709A46C"
-            name="wildeuth"
-          />
+          <LeaderboardUser img={leaderboards[0].avatar} name={leaderboards[0].name} />
           <div className="relative h-[100px] bg-[#FFD342] flex items-center justify-center">
             <div
               className="absolute bg-[#FFA500] -translate-y-full top-0"
@@ -56,10 +51,7 @@ export default function LeaderboardPage() {
           </div>
         </div>
         <div>
-          <LeaderboardUser
-            img="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-1/410293532_1174983426809049_4664503484710597704_n.jpg?stp=dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=0ecb9b&_nc_ohc=L9oqhHetYbMQ7kNvgEinaI2&_nc_ad=z-m&_nc_cid=0&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=AvoXPKSu147b1T52dG9iIYL&oh=00_AYC3QDnUtdWN-7WzCGtHQbJNpGjJGAW0njJv5gDiYd7kkQ&oe=6709A46C"
-            name="wildeuth"
-          />
+          <LeaderboardUser img={leaderboards[2].avatar} name={leaderboards[2].name} />
           <div className="relative h-[50px] bg-[#FB8401] flex items-center justify-center">
             <div
               className="absolute bg-[#A24406] -translate-y-full top-0"
@@ -143,27 +135,15 @@ export default function LeaderboardPage() {
                 </TableRow>
               </TableHeader>
               <TableBody className="gradient-2 rounded-b-full border-collapse">
-                <TableRow className="border-none">
-                  <TableCell className="text-center font-[Poppins] text-xl">1</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl font-bold">wildeuth</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                </TableRow>
-                <TableRow className="border-none">
-                  <TableCell className="text-center font-[Poppins] text-xl">2</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl font-bold">wildeuth</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                </TableRow>
-                <TableRow className="border-none">
-                  <TableCell className="text-center font-[Poppins] text-xl">3</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl font-bold">wildeuth</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                  <TableCell className="text-center font-[Poppins] text-xl">$1,000,000</TableCell>
-                </TableRow>
+                {leaderboards.map((leaderboard, index) => (
+                  <TableRow key={index} className="border-none">
+                    <TableCell className="text-center font-[Poppins] text-xl">{index + 1}</TableCell>
+                    <TableCell className="text-center font-[Poppins] text-xl font-bold">{leaderboard.name}</TableCell>
+                    <TableCell className="text-center font-[Poppins] text-xl">{leaderboard.subscribers}</TableCell>
+                    <TableCell className="text-center font-[Poppins] text-xl">{leaderboard.totalEarnings}</TableCell>
+                    <TableCell className="text-center font-[Poppins] text-xl">{leaderboard.fanTokenPrice}</TableCell>
+                  </TableRow>
+                ))}
               </TableBody>
             </Table>
           </div>
