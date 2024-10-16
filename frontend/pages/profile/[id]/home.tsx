@@ -136,6 +136,7 @@ export default function HomeSection({ name, videos, token }: HomeSectionProps) {
                           name={item.name}
                           floor={item.floor}
                           volume={item.volume}
+                          small
                         />
                       </>
                     ))}

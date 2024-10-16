@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import CollectionImage from "@/public/assets/images/collection.png";
+import { Button } from "./ui/button";
 
 type CollectionProps = {
   name: string;
@@ -13,7 +14,7 @@ export default function Collection({ name, floor, volume, image, small }: Collec
   return (
     <div
       className={cn(
-        "flex flex-col overflow-auto justify-between glow rounded-lg w-[300px] min-h-full font-[FairyMuffin] text-left",
+        "flex flex-col overflow-auto justify-between glow p-3 mb-2 rounded-lg w-[300px] min-h-full font-[FairyMuffin] text-left",
       )}
     >
       <img src={image} className="object-cover object-left grow" />
@@ -36,6 +37,7 @@ export default function Collection({ name, floor, volume, image, small }: Collec
           </div>
         </div>
       </div>
+      {small && <Button className="gradient-2 text-lg text-black">Buy now</Button>}
     </div>
   );
 }

@@ -4,6 +4,7 @@ import Swap from "@/public/assets/icons/swap.svg?react";
 import { useState } from "react";
 import { tokens } from "@/utils/db";
 import { Input } from "@/components/ui/input";
+import { getSwapTxData } from "@/utils/aptosClient";
 
 export default function SwapTokenPage() {
   const [sellValue, setSellValue] = useState(0);
@@ -11,8 +12,9 @@ export default function SwapTokenPage() {
   const [buyValue, setBuyValue] = useState(0);
   const [buyToken, setBuyToken] = useState("BUU");
 
-  const swap = () => {
-    console.log("Swapping", sellValue, sellToken, buyValue, buyToken);
+  const swap = async () => {
+    const tx = await getSwapTxData(sellToken, buyToken, sellValue, true);
+    await (window as any).pontem.signAndSubmit(tx);
   };
 
   return (
@@ -46,6 +48,7 @@ function Token({ type, setValue, value, setToken }) {
           style={{
             WebkitAppearance: "none",
           }}
+          onChange={(e) => setValue(e.target.value)}
         />
       </div>
       <Select

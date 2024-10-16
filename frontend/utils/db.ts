@@ -110,7 +110,7 @@ export const streamers = [
       volume: "$1.2B",
     },
     about:
-      "Hey there! Hoshino's here - your lovable, fun-filled virtual pal! I'm all about spreading joy through games, cute chats, and good vibes. Whether I’m diving into exciting adventures or sharing everyday moments, I'm here to brighten your day with my kawaii energy!",
+      "Hey there! Hoshino's here - your lovable, fun-filled virtual pal! I'm all about spreading joy through games, cute chats, and good vibes. Whether I'm diving into exciting adventures or sharing everyday moments, I'm here to brighten your day with my kawaii energy!",
   },
   {
     name: "Kiara",
@@ -146,7 +146,7 @@ export const tokens = [
   {
     symbol: "WDU",
     address: "0xdccf245315f44423551173dbf650cf61d9469d78606d35b9b9bdc47347f85522",
-    name: "Wildeuth Token",
+    name: "Hoshino Token",
   },
 ];
 

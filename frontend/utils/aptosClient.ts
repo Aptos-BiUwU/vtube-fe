@@ -171,3 +171,27 @@ export const getDepositTxData = async (coinAddress: string, amount: number) => {
     arguments: data.txData.functionArguments || [],
   };
 };
+
+export const getSwapTxData = async (sellToken: string, buyToken: string, sellValue: number, coinForBiuwu: boolean) => {
+  const resp = await fetch("http://140.245.117.232:2424/transactions/getSwapExactInTxData", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      coinAddress: sellToken,
+      amountIn: sellValue,
+      amountOutMin: 0,
+      coinForBiUwU: coinForBiuwu,
+    }),
+  });
+
+  const data = await resp.json();
+  console.log(data);
+
+  return {
+    function: data.txData.function,
+    type_arguments: data.txData.typeArguments || [],
+    arguments: data.txData.functionArguments || [],
+  };
+};
