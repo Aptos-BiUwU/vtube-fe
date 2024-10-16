@@ -107,16 +107,16 @@ export default function LeaderboardPage() {
                 <SelectContent className="text-lg">
                   <SelectGroup>
                     <SelectItem value="apple" className="text-lg">
-                      7 Days
+                      Subscriber
                     </SelectItem>
                     <SelectItem value="banana" className="text-lg">
-                      1 Month
+                      Total Earning
                     </SelectItem>
                     <SelectItem value="blueberry" className="text-lg">
-                      3 Months
+                      Fan Token Price
                     </SelectItem>
                     <SelectItem value="grapes" className="text-lg">
-                      All times
+                      Contribution
                     </SelectItem>
                   </SelectGroup>
                 </SelectContent>

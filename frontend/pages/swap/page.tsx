@@ -8,12 +8,18 @@ import { getSwapTxData } from "@/utils/aptosClient";
 
 export default function SwapTokenPage() {
   const [sellValue, setSellValue] = useState(0);
-  const [sellToken, setSellToken] = useState("BUU");
+  const [sellToken, setSellToken] = useState(tokens[0].address);
   const [buyValue, setBuyValue] = useState(0);
   const [buyToken, setBuyToken] = useState("BUU");
 
   const swap = async () => {
-    const tx = await getSwapTxData(sellToken, buyToken, sellValue, true);
+    let type = true;
+    let coin = sellToken;
+    if (sellToken === tokens[0].address) {
+      coin = buyToken;
+      type = false;
+    }
+    const tx = await getSwapTxData(coin, sellValue, type);
     await (window as any).aptos.signAndSubmitTransaction(tx);
   };
 

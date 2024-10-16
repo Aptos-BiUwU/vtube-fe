@@ -6,9 +6,10 @@ export const streamers = [
     campaign: "0",
     banner: "/frontend/public/assets/images/mika_banner.png",
     coinAddress: "0x11187299e3764343024296aea35cadc854eb0dff01b9d9647234a27aadcf78b4",
-    battleId: "0",
+    battleId: "1",
     streamUrl: "/frontend/public/assets/video/mika.mp4",
     game: "Chating",
+    isPrivate: true,
     avatar:
       "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
     thumbnailUrl:
@@ -67,7 +68,7 @@ export const streamers = [
     campaign: "1",
     coinAddress: "0x5c06977a52a6d2390bd5368151ce8fd19e5f50e0c3512e69bd8247d8274e397c",
     banner: "/frontend/public/assets/images/hoshino_banner.png",
-    battleId: "0",
+    battleId: "1",
     streamUrl: "/frontend/public/assets/video/hoshino.mp4",
     game: "ASMR & Gaming",
     avatar:
@@ -109,6 +110,7 @@ export const streamers = [
       fdv: "$10B",
       volume: "$1.2B",
     },
+    isPrivate: true,
     about:
       "Hey there! Hoshino's here - your lovable, fun-filled virtual pal! I'm all about spreading joy through games, cute chats, and good vibes. Whether I'm diving into exciting adventures or sharing everyday moments, I'm here to brighten your day with my kawaii energy!",
   },

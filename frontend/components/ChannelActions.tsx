@@ -4,8 +4,9 @@ import { Dialog, DialogClose, DialogContent, DialogHeader, DialogTitle, DialogTr
 import BiuwuCoin from "@/public/assets/icons/biuwu_coin.svg?react";
 import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getDepositTxData, getSubcriptionTxData } from "@/utils/aptosClient";
+import { aptosClient, getDepositTxData, getRegisterCoinTxData, getSubcriptionTxData } from "@/utils/aptosClient";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
+import { Aptos, Network } from "@aptos-labs/ts-sdk";
 
 type ChannelActionsProps = {
   channel: any;
@@ -69,12 +70,21 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
 
   const subcribe = async () => {
     let tx = await getSubcriptionTxData(channel.coinAddress);
-    await (window as any).aptos.signAndSubmitTransaction(tx);
+    // const pending = await (window as any).aptos.signAndSubmitTransaction(tx);
+    // console.log(pending);
 
-    tx = await getDepositTxData(channel.coinAddress, 100);
+    // const client = new Aptos();
+    // const txn = await client.waitForTransaction(pending.hash);
+
+    tx = await getDepositTxData(channel.coinAddress, fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]);
     await (window as any).aptos.signAndSubmitTransaction(tx);
 
     fetchSubscriptionStatus.refetch();
+  };
+
+  const registerCoin = async () => {
+    const tx = await getRegisterCoinTxData(channel.coinAddress);
+    await (window as any).aptos.signAndSubmitTransaction(tx);
   };
 
   return (
@@ -120,7 +130,7 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
         </DialogContent>
       </Dialog>
       <div className="rounded-md gradient-2 p-0.5">
-        <Button variant="outline" className="text-lg rounded-sm flex items-center">
+        <Button variant="outline" className="text-lg rounded-sm flex items-center" onClick={registerCoin}>
           <Heart size={20} />
           Subcribe
         </Button>
