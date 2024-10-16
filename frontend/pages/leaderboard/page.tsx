@@ -33,8 +33,8 @@ export default function LeaderboardPage() {
             <p className="text-3xl">2</p>
           </div>
         </div>
-        <div className="relative">
-          <Crown className="absolute right-10 top-6" fontSize={50} />
+        <div className="relative pt-6">
+          <Crown className="absolute top-0 right-12" fontSize={50} />
           <LeaderboardUser img={leaderboards[0].avatar} name={leaderboards[0].name} />
           <div className="relative h-[100px] bg-[#FFD342] flex items-center justify-center">
             <div
