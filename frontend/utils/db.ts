@@ -132,6 +132,104 @@ export const streamers = [
     thumbnailUrl:
       "https://i.ytimg.com/vi/_HtWxCc7JxA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBl3e3IbiEtEIlVDaxtAy4F-FC_jg",
   },
+  {
+    name: "Izuru",
+    uid: "izuru",
+    game: "Valorant",
+    avatar: "https://yt3.googleusercontent.com/dlq5H2SBaaAq9ilOfgGm0QvcVGEieSICsdk0Hv6oADZFn5Q0ctV1nxNAiQAJiS8u_svx5YlasQE=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/nyrgf7YA0Uo/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBL3QqZ6jf1Y4jmohDtGlqJaQNUlw"
+  },
+  {
+    name: "Laplus",
+    uid: "laplus",
+    game: "Co-op games",
+    avatar: "https://yt3.googleusercontent.com/roGS60A8a_lDbVakIg1JU3u3hbtjHSTilMGHMizuPKh7tuoY2nl46raxuW2f_83IKFGMjL6Z=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/pYEfOPIurcE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLABwW2jMZlxXWvJ-s9Rwm7kfF5Yiw"
+  },
+  {
+    name: "Koyori",
+    uid: "koyori",
+    game: "Simulator",
+    avatar: "https://yt3.googleusercontent.com/WO7ItKNmy6tW_NQ82g8c1y74CZSw6GsSdynsE5s2csuEok2fHRrAaGcBV3JJO-2BxEOXXA8lvw=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/1g2bQnWe3HU/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLClA9QabQUnwSOJksxlKdvYw3nK9A"
+  },
+  {
+    name: "Sora",
+    uid: "sora",
+    game: "The legends of Zelda",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kT9PiLS8BWANuBdGG_-GHsNZxFqmF0YjMnzK55jISdca4=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/HrZYCpc3aso/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD2dzcoVUQwIXTRH5SnWZtVuGcw2g"
+  },
+  {
+    name: "Roboco",
+    uid: "roboco",
+    game: "Live Q&A",
+    avatar: "https://yt3.googleusercontent.com/GF0wbwZvZAGzYg8s8d6Yh1BDcWAE9UmLAh2uf3IMJ5l_ESi3sWeRqk2XfhW3IgzMeliHpt4cAw=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/8TZYsBLTT80/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCAa16a5ZH96IN5XRvSQyVGhCGIgg"
+  },
+  {
+    name: "Suisei",
+    uid: "suisei",
+    game: "Grand Theft Auto V",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kLDBK5ksSvk5-XJ6S8e0kWfjy7mVl3jyUkgDeMQ7rlCpU=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/F6TzjH6Qtac/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6J-IFtmZnMSbXnQCxgNBkJ2etfw"
+  },
+  {
+    name: "Miko",
+    uid: "miko",
+    game: "Liar's Bar",
+    avatar: "https://yt3.googleusercontent.com/gxXHmXJq_kkZ0bvTmz7R1deyOAV44zZr2keaF0ojSq7MeiOGLSzFTCoYgYR4PGDWTCoLR7eK=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/6-9AHqQoQcA/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBgm0QrAKMk5RsU3GVZP-XPhaBC5Q"
+  },
+  {
+    name: "Fubuki",
+    uid: "fubuki",
+    game: "Omoriii",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_mGXEeXXCCPh-sl2jKYbYpLBuCsjEGDgJaL5RQziYhyugQ=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/Xrw7S-sYmOE/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLBVLKMV_giwze_7IatLsUlRy9CGQg"
+  },
+  {
+    name: "Matsuri",
+    uid: "matsuri",
+    game: "Super Mario Party!",
+    avatar: "https://yt3.googleusercontent.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/rsRHK869f_s/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCFPYoe5od-skziKaWAI5wUTOKl_w"
+  },
+  {
+    name: "Shion",
+    uid: "shion",
+    game: "Sing & Chat",
+    avatar: "https://yt3.googleusercontent.com/V3GVqD-sYadScSd8QYW4x1QTRfu2RyUNyKWVRb0IJxX0gj2PV6xH32d_BJHn3l0fouPLUw6Ref0=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/RpAACYRxYy8/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLAh3E4t8KJbNMXX7xL0MHSh93iPHg"
+  },
+  {
+    name: "Aqua",
+    uid: "aqua",
+    game: "Valorant",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kaZLtKaya9TSJr3M4lpzV95R2rWdQtGk67fwedroUfSnE=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/29o7gd8kgoc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCUEW5H0S1EbvTVsOLEOhKVO6Jo1Q"
+  },
+  {
+    name: "Hakua Lira",
+    uid: "hakua",
+    game: "Racing Simulator",
+    avatar: "https://yt3.googleusercontent.com/Ns15zJ-FlKgvJ7TbEIXs6rtPn-Ft4OIUMJR6ff-yX4EN9Zmv3qfxZVu24m0mF2zKUbdioOrNLDE=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/3F87QWiISBg/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDuYeVUHJ-LTaVhWEbt1seiyo7tGg"
+  },
+  {
+    name: "Amaya",
+    uid: "amaya",
+    game: "League of Legends",
+    avatar: "https://yt3.googleusercontent.com/Z5-blM3tzwkjPLe-6yG01CCjExRyNRauqgXq8qGOfE3lZOUgwqfypOwWYcFFewy8kbbtpRtUBCs=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/BTz6wxffU8Q/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLC6wh8yzLmlZp3fqG-jSWxFmu70rg"
+  },
+  {
+    name: "Tentei Forte",
+    uid: "tentei",
+    game: "Watch together",
+    avatar: "https://yt3.googleusercontent.com/Y5bTMHiUe_0aXaDhC-h3fEQ2Xnm5QqVrdy_Qdw_HHvpkcewhavrw24DGGsmhARcvZ3iZd2LG=s160-c-k-c0x00ffffff-no-rj",
+    thumbnailUrl: "https://i.ytimg.com/vi/LxS08Y-zaqs/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLDb26zw0gKBx5w0jErMQMNwAVXH0g"
+  }
 ];
 
 export const tokens = [
@@ -144,11 +242,109 @@ export const tokens = [
     symbol: "MIK",
     address: "0x11187299e3764343024296aea35cadc854eb0dff01b9d9647234a27aadcf78b4",
     name: "Mika Token",
+    icon: "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj"
   },
   {
     symbol: "HSN",
     address: "0x5c06977a52a6d2390bd5368151ce8fd19e5f50e0c3512e69bd8247d8274e397c",
     name: "Hoshino Token",
+    icon: "https://yt3.ggpht.com/OK6xN6vJFmBvRR9PWczR27mDOj_yvE-EUJakmJK4MT-OXJBLlL3mKgc3xu9I1vrbZiLZY2Zj=s176-c-k-c0x00ffffff-no-rj-mo"
+  },
+  {
+    symbol: "KIA",
+    address: "0x49f8b871ea822a0502eef51e4ce5575e55ce0efadf2b64b946dc316566d10051",
+    name: "Kiara Token",
+    icon: "https://yt3.googleusercontent.com/w7TKJYU7zmamFmf-WxfahCo_K7Bg2__Pk-CCBNnbewMG-77OZLqJO9MLvDAmH9nEkZH8OkWgSQ=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "SHI",
+    address: "0x78f4a3964fdd729150b897d8f55f1cc10ccc392b3739d3364c496f17ede3b1f3",
+    name: "Shiori Token",
+    icon: "https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "IZU",
+    address: "",
+    name: "Izuru Token",
+    icon: "https://yt3.googleusercontent.com/dlq5H2SBaaAq9ilOfgGm0QvcVGEieSICsdk0Hv6oADZFn5Q0ctV1nxNAiQAJiS8u_svx5YlasQE=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "LAP",
+    address: "",
+    name: "Laplus Token",
+    icon: "https://yt3.googleusercontent.com/roGS60A8a_lDbVakIg1JU3u3hbtjHSTilMGHMizuPKh7tuoY2nl46raxuW2f_83IKFGMjL6Z=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "KOY",
+    address: "",
+    name: "Koyori Token",
+    icon: "https://yt3.googleusercontent.com/WO7ItKNmy6tW_NQ82g8c1y74CZSw6GsSdynsE5s2csuEok2fHRrAaGcBV3JJO-2BxEOXXA8lvw=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "SOR",
+    address: "",
+    name: "Sora Token",
+    icon: "https://yt3.googleusercontent.com/ytc/AIdro_kT9PiLS8BWANuBdGG_-GHsNZxFqmF0YjMnzK55jISdca4=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "ROB",
+    address: "",
+    name: "Roboco Token",
+    icon: "https://yt3.googleusercontent.com/GF0wbwZvZAGzYg8s8d6Yh1BDcWAE9UmLAh2uf3IMJ5l_ESi3sWeRqk2XfhW3IgzMeliHpt4cAw=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "SUI",
+    address: "",
+    name: "Suisei Token",
+    icon: "https://yt3.googleusercontent.com/ytc/AIdro_kLDBK5ksSvk5-XJ6S8e0kWfjy7mVl3jyUkgDeMQ7rlCpU=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "MIK",
+    address: "",
+    name: "Miko Token",
+    icon: "https://yt3.googleusercontent.com/gxXHmXJq_kkZ0bvTmz7R1deyOAV44zZr2keaF0ojSq7MeiOGLSzFTCoYgYR4PGDWTCoLR7eK=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "FUB",
+    address: "",
+    name: "Fubuki Token",
+    icon: "https://yt3.googleusercontent.com/ytc/AIdro_mGXEeXXCCPh-sl2jKYbYpLBuCsjEGDgJaL5RQziYhyugQ=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "MAT",
+    address: "",
+    name: "Matsuri Token",
+    icon: "https://yt3.googleusercontent.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "SHI",
+    address: "",
+    name: "Shion Token",
+    icon: "https://yt3.googleusercontent.com/V3GVqD-sYadScSd8QYW4x1QTRfu2RyUNyKWVRb0IJxX0gj2PV6xH32d_BJHn3l0fouPLUw6Ref0=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "AQU",
+    address: "",
+    name: "Aqua Token",
+    icon: "https://yt3.googleusercontent.com/ytc/AIdro_kaZLtKaya9TSJr3M4lpzV95R2rWdQtGk67fwedroUfSnE=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "HAK",
+    address: "",
+    name: "Hakua Token",
+    icon: "https://yt3.googleusercontent.com/Ns15zJ-FlKgvJ7TbEIXs6rtPn-Ft4OIUMJR6ff-yX4EN9Zmv3qfxZVu24m0mF2zKUbdioOrNLDE=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "AMA",
+    address: "",
+    name: "Amaya Token",
+    icon: "https://yt3.googleusercontent.com/Z5-blM3tzwkjPLe-6yG01CCjExRyNRauqgXq8qGOfE3lZOUgwqfypOwWYcFFewy8kbbtpRtUBCs=s160-c-k-c0x00ffffff-no-rj"
+  },
+  {
+    symbol: "TEN",
+    address: "",
+    name: "Tentei Token",
+    icon: "https://yt3.googleusercontent.com/Y5bTMHiUe_0aXaDhC-h3fEQ2Xnm5QqVrdy_Qdw_HHvpkcewhavrw24DGGsmhARcvZ3iZd2LG=s160-c-k-c0x00ffffff-no-rj"
   },
 ];
 

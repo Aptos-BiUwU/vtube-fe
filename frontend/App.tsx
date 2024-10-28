@@ -7,20 +7,19 @@ import Twitter from "@/public/assets/icons/twitter.svg?react";
 import Docs from "@/public/assets/icons/document.svg?react";
 import Ranking from "@/public/assets/icons/ranking.svg?react";
 import Swap from "@/public/assets/icons/swap.svg?react";
+import Coin from "@/public/assets/icons/biuwu_coin.svg?react";
 import React from "react";
 import { Outlet } from "react-router-dom";
 import { streamers } from "./utils/db";
 
 console.log(Inventory);
 
-const channel = {
-  id: "1",
-  name: "Shad",
-  avatar: "",
-  game: "League of Legends",
-};
-
 const actions = [
+  {
+    icon: <Coin />,
+    label: "Token",
+    link: "/tokens",
+  },
   {
     icon: <Swap />,
     label: "Swap",
@@ -31,10 +30,10 @@ const actions = [
     label: "Leaderboard",
     link: "/leaderboard",
   },
-  {
-    icon: <DiamondPlus />,
-    label: "Create",
-  },
+  // {
+  //   icon: <DiamondPlus />,
+  //   label: "Create",
+  // },
   {
     icon: <Inventory />,
     label: "Inventory",
@@ -60,7 +59,7 @@ function App() {
           <div className="w-full">
             <h3 className="uppercase text-lg font-bold text-[FairyMuffin] mb-2">Recommended channels</h3>
             <div className="flex flex-col gap-3">
-              {streamers.map((streamer, index) => (
+              {streamers.slice(5, 12).map((streamer, index) => (
                 <RecommendChannel key={index} channel={streamer as any} />
               ))}
             </div>

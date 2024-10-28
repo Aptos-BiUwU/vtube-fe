@@ -47,6 +47,24 @@ export const isRegistered = async (account: string) => {
   return data?.registered[0];
 };
 
+export const isRegisteredCoin = async (account: string, coinAddress: string) => {
+  const resp = await fetch("http://140.245.117.232:2424/views/viewCoinRegistered", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userAddress: account,
+      coinAddress,
+    }),
+  });
+  const data = await resp.json();
+
+  console.log(data);
+
+  return data?.registered[0];
+}
+
 export const fetchAmount = async (account: string) => {
   await isRegistered(account);
   const resp = await fetch("http://140.245.117.232:2424/views/viewBiUwUBalance", {
@@ -62,6 +80,22 @@ export const fetchAmount = async (account: string) => {
 
   return data?.balance[0];
 };
+
+export const fetchCoinBalance = async (account: string, coinAddress: string) => {
+  const resp = await fetch("http://140.245.117.232:2424/views/viewCoinBalance", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      userAddress: account,
+      coinAddress,
+    }),
+  });
+  const data = await resp.json();
+
+  return data?.balance[0];
+}
 
 export const fetchCampaign = async (id: string): Promise<Campaign> => {
   const resp = await fetch("http://140.245.117.232:2424/views/viewCampaignInfo", {

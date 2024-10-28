@@ -69,7 +69,7 @@ function Token({ type, setValue, value, setToken }) {
         </SelectTrigger>
         <SelectContent>
           {tokens.map((token, index) => (
-            <SelectItem key={index} value={token.address} className="text-2xl">
+            <SelectItem key={index} value={token.address === "" ? "empty" : token.address} className="text-2xl">
               {token.symbol}
             </SelectItem>
           ))}

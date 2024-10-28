@@ -13,18 +13,17 @@ export default function Gift({ icon, price, name, onClick }: GiftProps) {
     <TooltipProvider>
       <Tooltip delayDuration={0}>
         <TooltipTrigger>
-          <>
-            <h4 className="text-lg text-[#A0A0A0] font-[FairyMuffin]">{name}</h4>
-            <Button
+          <div className="h-full flex flex-col">
+            <h4 className="text-lg text-center text-[#A0A0A0] font-[FairyMuffin]">{name}</h4>
+            <img
+              src={icon}
+              role="button"
+              className="w-24 mx-auto grow object-contain"
               onClick={() => {
                 onClick(price);
               }}
-              variant="ghost"
-              className="p-1 h-fit"
-            >
-              <img src={icon} className="w-20 aspect-square" />
-            </Button>
-          </>
+            />
+          </div>
         </TooltipTrigger>
         <TooltipContent>
           <p className="font-[Poppins]">{price}</p>

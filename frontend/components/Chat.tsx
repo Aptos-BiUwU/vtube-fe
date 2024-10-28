@@ -7,6 +7,7 @@ import GiftStar from "@/public/assets/icons/gift_star.png";
 import GiftMeow from "@/public/assets/icons/gift_meow.png";
 import GiftGhost from "@/public/assets/icons/gift_ghost.png";
 import GiftJdok from "@/public/assets/icons/gift_jdok.png";
+import GiftIcecream from "@/public/assets/icons/gift_icecream.png";
 import { useState } from "react";
 
 type ChatProps = {
@@ -30,13 +31,18 @@ const gifts = [
     name: "Magic Bear",
   },
   {
-    icon: GiftJdok,
+    icon: GiftIcecream,
     price: "300",
+    name: "Ice Cream",
+  },
+  {
+    icon: GiftJdok,
+    price: "400",
     name: "Jdok",
   },
   {
     icon: GiftMeow,
-    price: "400",
+    price: "500",
     name: "Super Meow",
   },
 ];

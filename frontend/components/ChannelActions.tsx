@@ -70,11 +70,14 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
 
   const subcribe = async () => {
     let tx = await getSubcriptionTxData(channel.coinAddress);
-    // const pending = await (window as any).aptos.signAndSubmitTransaction(tx);
-    // console.log(pending);
+    const pending = await (window as any).aptos.signAndSubmitTransaction(tx);
+    console.log(pending);
 
-    // const client = new Aptos();
-    // const txn = await client.waitForTransaction(pending.hash);
+    const client = aptosClient();
+    const txn = await client.waitForTransaction({
+      transactionHash: pending.hash,
+    });
+    console.log(txn);
 
     tx = await getDepositTxData(channel.coinAddress, fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]);
     await (window as any).aptos.signAndSubmitTransaction(tx);

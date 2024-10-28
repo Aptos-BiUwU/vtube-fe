@@ -164,7 +164,7 @@ export default function LivePage({ channelInfo }: LivePageProps) {
           </div>
         </div>
         <div className="flex mb-2">
-          <ChannelInfo channel={{ id: "1", name: channelInfo.name, avatar: channelInfo.avatar, game: "Chating" }} />
+          <ChannelInfo channel={channelInfo} />
           <ChannelActions channel={channelInfo} />
         </div>
         <div className="flex flex-col gap-2">

@@ -16,6 +16,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BattlePage from "./pages/pk/[id]/page";
 import LeaderboardPage from "./pages/leaderboard/page";
 import SwapTokenPage from "./pages/swap/page";
+import TokensPage from "./pages/tokens/page";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +42,10 @@ const router = createBrowserRouter([
       {
         path: "/swap",
         element: <SwapTokenPage />,
+      },
+      {
+        path: "/tokens",
+        element: <TokensPage />,
       },
     ],
   },
