@@ -12,7 +12,7 @@ export const streamers = [
     battleId: "1",
     streamUrl: "/frontend/public/assets/video/mika.mp4",
     game: "Chating",
-    isPrivate: true,
+    isBattle: true,
     avatar:
       "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
     thumbnailUrl:

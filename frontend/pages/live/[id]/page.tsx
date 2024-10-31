@@ -5,9 +5,9 @@ import BattlePage from "@/pages/pk/[id]/page";
 import LivePage from "./Live";
 
 export default function LivestreamPage() {
-  const [battleStarted, setBattleStarted] = useState(false);
   const { channel } = useParams();
   const channelInfo = streamers.find((streamer) => streamer.uid === channel);
+  const [battleStarted, setBattleStarted] = useState(channelInfo.isBattle);
 
   useEffect(() => {
     // setTimeout(() => {
