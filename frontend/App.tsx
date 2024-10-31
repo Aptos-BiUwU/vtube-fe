@@ -59,7 +59,8 @@ function App() {
           <div className="w-full">
             <h3 className="uppercase text-lg font-bold text-[FairyMuffin] mb-2">Recommended channels</h3>
             <div className="flex flex-col gap-3">
-              {streamers.slice(5, 9).map((streamer, index) => (
+              <RecommendChannel key={0} channel={streamers[0] as any} />
+              {streamers.slice(5, 8).map((streamer, index) => (
                 <RecommendChannel key={index} channel={streamer as any} />
               ))}
             </div>
