@@ -14,6 +14,7 @@ type ChannelActionsProps = {
 
 export default function ChannelActions({ channel }: ChannelActionsProps) {
   const { account } = useWallet();
+  const [status, setStatus] = useState(localStorage.getItem("subscribe"));
 
   const fetchSubscriptionPlan = useQuery({
     queryKey: ["subscription", channel.id],
@@ -109,8 +110,10 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
           <div className="flex items-center gap-2">
             <BiuwuCoin fontSize={35} />
             <p className="font-[Poppins] texl-2xl">
-              <span className="text-4xl font-bold">{fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]}</span> per
-              month
+              <span className="text-4xl font-bold">
+                {fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1] / 1000000}
+              </span>{" "}
+              per month
             </p>
           </div>
           <ul>
@@ -135,8 +138,15 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
         </DialogContent>
       </Dialog>
       <div className="rounded-md gradient-2 p-0.5">
-        <Button variant="outline" className="text-lg rounded-sm flex items-center" onClick={registerCoin}>
-          <Heart size={20} />
+        <Button
+          variant="outline"
+          className="text-lg rounded-sm flex items-center"
+          onClick={() => {
+            localStorage.setItem("subscribe", "true");
+            setStatus("true");
+          }}
+        >
+          <Heart size={20} fill={`${status ? "red" : "transparent"}`} />
           Subcribe
         </Button>
       </div>

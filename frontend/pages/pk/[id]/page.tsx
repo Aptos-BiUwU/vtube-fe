@@ -24,7 +24,7 @@ export default function BattlePage({ streamer }: BattlePageProps) {
   const [channels, setChannels] = useState([]);
   const queryClient = useQueryClient();
   const attack = async (amount: string) => {
-    const tx = await getBattleTxData(streamer.battleId, amount, side);
+    const tx = await getBattleTxData(streamer.battleId, (Number(amount) * 1000000).toString(), side);
     console.log(tx);
     await (window as any).aptos.signAndSubmitTransaction(tx);
     queryClient.invalidateQueries({
@@ -64,7 +64,9 @@ export default function BattlePage({ streamer }: BattlePageProps) {
       const left = Number(data[2]);
       const right = Number(data[3]);
       const total = left + right;
-      setPercent((left / total) * 100);
+      console.log(Number.isNaN(left / total));
+
+      setPercent((Number.isNaN(left / total) ? 0.5 : left / total) * 100);
       return {
         left,
         right,
@@ -88,8 +90,8 @@ export default function BattlePage({ streamer }: BattlePageProps) {
       >
         <div className="mb-4">
           <div className="flex justify-between font-[Cubano] text-4xl">
-            <p className="primary-2">{getBattle.data?.left}</p>
-            <p className="primary-3">{getBattle.data?.right}</p>
+            <p className="primary-2">{getBattle.data?.left / 1000000}</p>
+            <p className="primary-3">{getBattle.data?.right / 1000000}</p>
           </div>
           <div className="relative">
             <img

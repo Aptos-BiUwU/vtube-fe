@@ -52,7 +52,7 @@ export default function Token({ token }) {
         ) : isRegistered.data === TokenStatus.NotRegistered ? (
           "Register"
         ) : (
-          <span className="font-[Poppins]">{isRegistered.data}</span>
+          <span className="font-[Poppins]">{isRegistered.data / 1000000}</span>
         )}
       </Button>
     </div>

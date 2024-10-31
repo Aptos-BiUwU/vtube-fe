@@ -51,7 +51,9 @@ export default function LivePage({ channelInfo }: LivePageProps) {
   });
 
   const sendDonate = async (amount) => {
-    const tx = await getDonateTxData(channelInfo?.campaign!, amount);
+    console.log(Number(amount) * 1000000);
+
+    const tx = await getDonateTxData(channelInfo?.campaign!, (Number(amount) * 1000000).toString());
     console.log(tx);
 
     await (window as any).aptos.signAndSubmitTransaction(tx);
@@ -128,12 +130,12 @@ export default function LivePage({ channelInfo }: LivePageProps) {
             <div className="flex items-center justify-between flex-grow">
               <div className="flex items-center gap-3">
                 <h2 className="text-5xl text-transparent font-bold bg-clip-text bg-gradient-to-b from-[#1814FF] to-[#F2F2F2] via-[#7E7BF9] via-[54%]">
-                  {campaign?.goal - campaign?.current}
+                  {(campaign?.goal - campaign?.current) / 1000000}
                 </h2>
                 <p className="font-[FairyMuffin] text-2xl primary">Bear-Ice-Cream left !</p>
               </div>
               <p className="text-transparent text-2xl font-bold bg-clip-text bg-gradient-to-b from-[#1814FF] to-[#F2F2F2] via-[#7E7BF9] via-[54%]">
-                {`${campaign?.current}/${campaign?.goal}`}
+                {`${campaign?.current / 1000000}/${campaign?.goal / 1000000}`}
               </p>
             </div>
             <Progress value={Math.min(100, (campaign.current / campaign.goal) * 100)} />

@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import Swap from "@/public/assets/icons/swap.svg?react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { tokens } from "@/utils/db";
 import { Input } from "@/components/ui/input";
 import { getSwapTxData } from "@/utils/aptosClient";
@@ -19,7 +19,7 @@ export default function SwapTokenPage() {
       coin = buyToken;
       type = false;
     }
-    const tx = await getSwapTxData(coin, sellValue, type);
+    const tx = await getSwapTxData(coin, sellValue * 1000000, type);
     await (window as any).aptos.signAndSubmitTransaction(tx);
   };
 
@@ -30,7 +30,7 @@ export default function SwapTokenPage() {
         <Button variant="ghost" className="py-8">
           <Swap fontSize={50} />
         </Button>
-        <Token type="Buy" setValue={setBuyValue} value={buyValue} setToken={setBuyToken} />
+        <Token type="Buy" setValue={setBuyValue} value={sellValue * 0.99699} setToken={setBuyToken} />
         <Button
           onClick={swap}
           className="w-full gradient bg-opacity-30 bg-transparent font-[FairyMuffin] text-2xl text-black hover:bg-transparent hover:bg-opacity-50"
@@ -43,7 +43,7 @@ export default function SwapTokenPage() {
 }
 
 function Token({ type, setValue, value, setToken }) {
-  const [tmp, setTmp] = useState(0);
+  console.log(value);
 
   return (
     <div className="w-full flex gap-4 justify-between items-center bg-[#EEEEEE] p-4 rounded-lg font-[FairyMuffin]">
@@ -57,6 +57,8 @@ function Token({ type, setValue, value, setToken }) {
             WebkitAppearance: "none",
           }}
           onChange={(e) => setValue(e.target.value)}
+          value={value}
+          disabled={type === "Buy"}
         />
       </div>
       <Select

@@ -84,7 +84,7 @@ export function WalletSelector() {
         <DropdownMenuTrigger asChild>
           <Button>{account?.ansName || truncateAddress(account?.address) || "Unknown"}</Button>
         </DropdownMenuTrigger>
-        <p className="text-3xl primary">{getAmount.data}</p>
+        <p className="text-3xl primary">{getAmount.data / 1000000}</p>
         <BiuwuCoin fontSize={40} />
       </div>
       <DropdownMenuContent align="end">
