@@ -22,7 +22,7 @@ export default function Collection({ name, id, sc_name, floor, volume, image, sm
   const onClick = async () => {
     const payload = {
       function: `${NFT_WALLET}::digital_asset::transfer_token`,
-      arguments: [account.address, sc_name, id],
+      arguments: [sc_name, id],
       type_arguments: [],
     };
 
@@ -49,7 +49,7 @@ export default function Collection({ name, id, sc_name, floor, volume, image, sm
         </h3>
         <div className="flex items-center justify-between font-[Poppins]">
           <div>
-            <p className="text-lg font-light">Floor</p>
+            <p className="text-lg font-light">Price</p>
             <p className="font-bold text-xl">{floor} APT</p>
           </div>
           <div>

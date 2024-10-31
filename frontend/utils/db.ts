@@ -601,22 +601,22 @@ export const collections = [
       {
         id: "1",
         name: "Item 1",
-        floor: "0.04",
-        volume: "1,000",
+        floor: "0.2",
+        volume: "12",
         image: "/frontend/public/assets/images/mika/item1.1.jpg",
       },
       {
         id: "2",
         name: "Item 2",
-        floor: "0.04",
-        volume: "903",
+        floor: "0.034",
+        volume: "7",
         image: "/frontend/public/assets/images/mika/item1.2.jpg",
       },
       {
         id: "3",
         name: "Item 3",
-        floor: "0.04",
-        volume: "230",
+        floor: "0.025",
+        volume: "4",
         image: "/frontend/public/assets/images/mika/item1.3.jpg",
       },
     ],
@@ -635,15 +635,15 @@ export const collections = [
       {
         id: "1",
         name: "Item 1",
-        floor: "0.2",
+        floor: "0.4",
         volume: "19",
         image: "/frontend/public/assets/images/mika/item2.1.jpg",
       },
       {
         id: "2",
         name: "Item 2",
-        floor: "0.4",
-        volume: "15",
+        floor: "0.17",
+        volume: "11",
         image: "/frontend/public/assets/images/mika/item2.2.jpg",
       },
     ],
@@ -743,4 +743,4 @@ export const getItems = async (uid: string, collection_index: number, collection
   return result;
 }
 
-export const NFT_WALLET = "0x77361721c2f7b653afd6b8dc7308428af91f694aa4dc46deb8ecfde12a47f3c3"
+export const NFT_WALLET = "0x914b6a301adf912cc838c6808448c3c3f3ad5fa93bd98e32726f30447fd3039c"
