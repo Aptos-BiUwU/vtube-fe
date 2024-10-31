@@ -1,16 +1,36 @@
 import { cn } from "@/lib/utils";
 import CollectionImage from "@/public/assets/images/collection.png";
 import { Button } from "./ui/button";
+import { NFT_WALLET } from "@/utils/db";
+import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
 type CollectionProps = {
   name: string;
+  sc_name?: string;
+  id?: string;
   floor: string;
   volume: string;
   image: string;
   small?: boolean;
 };
 
-export default function Collection({ name, floor, volume, image, small }: CollectionProps) {
+export default function Collection({ name, id, sc_name, floor, volume, image, small }: CollectionProps) {
+  const { account } = useWallet();
+
+  const fetchNFTInfo = async () => {};
+
+  const onClick = async () => {
+    const payload = {
+      function: `${NFT_WALLET}::digital_asset::transfer_token`,
+      arguments: [account.address, sc_name, id],
+      type_arguments: [],
+    };
+
+    console.log(payload);
+
+    await (window as any).aptos.signAndSubmitTransaction({ payload });
+  };
+
   return (
     <div
       className={cn(
@@ -38,7 +58,11 @@ export default function Collection({ name, floor, volume, image, small }: Collec
           </div>
         </div>
       </div>
-      {small && <Button className="gradient-2 text-lg text-black">Buy now</Button>}
+      {small && (
+        <Button className="gradient-2 text-lg text-black" onClick={onClick}>
+          Buy now
+        </Button>
+      )}
     </div>
   );
 }

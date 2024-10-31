@@ -43,6 +43,8 @@ export default function SwapTokenPage() {
 }
 
 function Token({ type, setValue, value, setToken }) {
+  const [tmp, setTmp] = useState(0);
+
   return (
     <div className="w-full flex gap-4 justify-between items-center bg-[#EEEEEE] p-4 rounded-lg font-[FairyMuffin]">
       <div className="flex flex-col gap-4">
@@ -63,14 +65,16 @@ function Token({ type, setValue, value, setToken }) {
           setToken(val);
         }}
       >
-        <SelectTrigger className="w-[180px] bg-[#D9D9D9] rounded-full text-2xl flex gap-2">
-          <div className="w-[20px] h-[20px] bg-white rounded-full"></div>
+        <SelectTrigger className="min-w-fit bg-[#D9D9D9] rounded-full text-2xl flex gap-2">
           <SelectValue placeholder="BUU" />
         </SelectTrigger>
         <SelectContent>
           {tokens.map((token, index) => (
             <SelectItem key={index} value={token.address === "" ? "empty" : token.address} className="text-2xl">
-              {token.symbol}
+              <div className="flex gap-2 items-center">
+                <img className="w-[30px] h-[30px] rounded-full" src={token.icon} />
+                {token.symbol}
+              </div>
             </SelectItem>
           ))}
         </SelectContent>

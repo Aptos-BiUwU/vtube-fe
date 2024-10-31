@@ -1,3 +1,6 @@
+import { aptosClient } from "./aptosClient";
+import Token from "@/public/assets/icons/biuwu_coin.svg"
+
 export const streamers = [
   {
     wallet: "0x5cb66529acf4a2d38067eac1db073fc61412b51a53f0ae976de6c7f21cc36656",
@@ -237,6 +240,7 @@ export const tokens = [
     symbol: "BUU",
     address: "0x5cb66529acf4a2d38067eac1db073fc61412b51a53f0ae976de6c7f21cc36656",
     name: "BiUwU Token",
+    icon: Token,
   },
   {
     symbol: "MIK",
@@ -252,13 +256,13 @@ export const tokens = [
   },
   {
     symbol: "KIA",
-    address: "0x49f8b871ea822a0502eef51e4ce5575e55ce0efadf2b64b946dc316566d10051",
+    address: "",
     name: "Kiara Token",
     icon: "https://yt3.googleusercontent.com/w7TKJYU7zmamFmf-WxfahCo_K7Bg2__Pk-CCBNnbewMG-77OZLqJO9MLvDAmH9nEkZH8OkWgSQ=s160-c-k-c0x00ffffff-no-rj"
   },
   {
     symbol: "SHI",
-    address: "0x78f4a3964fdd729150b897d8f55f1cc10ccc392b3739d3364c496f17ede3b1f3",
+    address: "",
     name: "Shiori Token",
     icon: "https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s160-c-k-c0x00ffffff-no-rj"
   },
@@ -414,38 +418,167 @@ export const getRandomCategory = () => {
   return result;
 };
 
+// export const leaderboards = [
+//   {
+//     name: "Mika",
+//     subscribers: "9.4k",
+//     totalEarnings: "1.2M",
+//     fanTokenPrice: "$0.026",
+//     avatar:
+//       "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
+//   },
+//   {
+//     name: "Hoshino",
+//     subscribers: "8.2k",
+//     totalEarnings: "1.5M",
+//     fanTokenPrice: "$0.483",
+//     avatar:
+//       "https://yt3.ggpht.com/OK6xN6vJFmBvRR9PWczR27mDOj_yvE-EUJakmJK4MT-OXJBLlL3mKgc3xu9I1vrbZiLZY2Zj=s176-c-k-c0x00ffffff-no-rj-mo",
+//   },
+//   {
+//     name: "Kiara",
+//     subscribers: "7.5k",
+//     totalEarnings: "1.1M",
+//     fanTokenPrice: "$0.004",
+//     avatar:
+//       "https://yt3.googleusercontent.com/w7TKJYU7zmamFmf-WxfahCo_K7Bg2__Pk-CCBNnbewMG-77OZLqJO9MLvDAmH9nEkZH8OkWgSQ=s160-c-k-c0x00ffffff-no-rj",
+//   },
+//   {
+//     name: "Shiori",
+//     subscribers: "6.3k",
+//     totalEarnings: "900k",
+//     fanTokenPrice: "$0.035",
+//     avatar:
+//       "https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s160-c-k-c0x00ffffff-no-rj",
+//   },
+// ];
+
 export const leaderboards = [
+  {
+    name: "Hoshino",
+    subscribers: "10.2k",
+    totalEarnings: "1.5M",
+    fanTokenPrice: "$0.483",
+    avatar: "https://yt3.ggpht.com/OK6xN6vJFmBvRR9PWczR27mDOj_yvE-EUJakmJK4MT-OXJBLlL3mKgc3xu9I1vrbZiLZY2Zj=s176-c-k-c0x00ffffff-no-rj-mo",
+  },
   {
     name: "Mika",
     subscribers: "9.4k",
     totalEarnings: "1.2M",
     fanTokenPrice: "$0.026",
-    avatar:
-      "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
-  },
-  {
-    name: "Hoshino",
-    subscribers: "8.2k",
-    totalEarnings: "1.5M",
-    fanTokenPrice: "$0.483",
-    avatar:
-      "https://yt3.ggpht.com/OK6xN6vJFmBvRR9PWczR27mDOj_yvE-EUJakmJK4MT-OXJBLlL3mKgc3xu9I1vrbZiLZY2Zj=s176-c-k-c0x00ffffff-no-rj-mo",
+    avatar: "https://yt3.googleusercontent.com/4XqAP7C0r0ZNZFAQfjo2gBh1wgpJJQuyyaxqy-qaCc3mHhPhz8KVE-TsPhqlcje4TjiyS8TrDw=s160-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Kiara",
-    subscribers: "7.5k",
+    subscribers: "8.8k",
     totalEarnings: "1.1M",
     fanTokenPrice: "$0.004",
-    avatar:
-      "https://yt3.googleusercontent.com/w7TKJYU7zmamFmf-WxfahCo_K7Bg2__Pk-CCBNnbewMG-77OZLqJO9MLvDAmH9nEkZH8OkWgSQ=s160-c-k-c0x00ffffff-no-rj",
+    avatar: "https://yt3.googleusercontent.com/w7TKJYU7zmamFmf-WxfahCo_K7Bg2__Pk-CCBNnbewMG-77OZLqJO9MLvDAmH9nEkZH8OkWgSQ=s160-c-k-c0x00ffffff-no-rj",
   },
   {
     name: "Shiori",
-    subscribers: "6.3k",
+    subscribers: "7.6k",
     totalEarnings: "900k",
     fanTokenPrice: "$0.035",
-    avatar:
-      "https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s160-c-k-c0x00ffffff-no-rj",
+    avatar: "https://yt3.googleusercontent.com/ZlovVsPyh8NgS37S4dfONiCBySiboGPbT9cYuirb8JM3JhSnqlpJk-8SQUEA7jPfqXpMvjaa=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Izuru",
+    subscribers: "7.1k",
+    totalEarnings: "850k",
+    fanTokenPrice: "$0.065",
+    avatar: "https://yt3.googleusercontent.com/dlq5H2SBaaAq9ilOfgGm0QvcVGEieSICsdk0Hv6oADZFn5Q0ctV1nxNAiQAJiS8u_svx5YlasQE=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Laplus",
+    subscribers: "6.9k",
+    totalEarnings: "750k",
+    fanTokenPrice: "$0.030",
+    avatar: "https://yt3.googleusercontent.com/roGS60A8a_lDbVakIg1JU3u3hbtjHSTilMGHMizuPKh7tuoY2nl46raxuW2f_83IKFGMjL6Z=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Koyori",
+    subscribers: "6.2k",
+    totalEarnings: "700k",
+    fanTokenPrice: "$0.021",
+    avatar: "https://yt3.googleusercontent.com/WO7ItKNmy6tW_NQ82g8c1y74CZSw6GsSdynsE5s2csuEok2fHRrAaGcBV3JJO-2BxEOXXA8lvw=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Sora",
+    subscribers: "5.9k",
+    totalEarnings: "650k",
+    fanTokenPrice: "$0.010",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kT9PiLS8BWANuBdGG_-GHsNZxFqmF0YjMnzK55jISdca4=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Roboco",
+    subscribers: "5.5k",
+    totalEarnings: "600k",
+    fanTokenPrice: "$0.018",
+    avatar: "https://yt3.googleusercontent.com/GF0wbwZvZAGzYg8s8d6Yh1BDcWAE9UmLAh2uf3IMJ5l_ESi3sWeRqk2XfhW3IgzMeliHpt4cAw=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Suisei",
+    subscribers: "5.1k",
+    totalEarnings: "580k",
+    fanTokenPrice: "$0.045",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kLDBK5ksSvk5-XJ6S8e0kWfjy7mVl3jyUkgDeMQ7rlCpU=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Miko",
+    subscribers: "4.9k",
+    totalEarnings: "550k",
+    fanTokenPrice: "$0.028",
+    avatar: "https://yt3.googleusercontent.com/gxXHmXJq_kkZ0bvTmz7R1deyOAV44zZr2keaF0ojSq7MeiOGLSzFTCoYgYR4PGDWTCoLR7eK=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Fubuki",
+    subscribers: "4.5k",
+    totalEarnings: "520k",
+    fanTokenPrice: "$0.040",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_mGXEeXXCCPh-sl2jKYbYpLBuCsjEGDgJaL5RQziYhyugQ=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Matsuri",
+    subscribers: "4.2k",
+    totalEarnings: "500k",
+    fanTokenPrice: "$0.025",
+    avatar: "https://yt3.googleusercontent.com/wIqM7MWDN94PoibzPmeog7WOt8jFKTKZBOBFEbLBaiUAdKLwoqdLC_CN7B7Gby-FWH-076rN=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Shion",
+    subscribers: "4.0k",
+    totalEarnings: "480k",
+    fanTokenPrice: "$0.032",
+    avatar: "https://yt3.googleusercontent.com/V3GVqD-sYadScSd8QYW4x1QTRfu2RyUNyKWVRb0IJxX0gj2PV6xH32d_BJHn3l0fouPLUw6Ref0=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Aqua",
+    subscribers: "3.8k",
+    totalEarnings: "460k",
+    fanTokenPrice: "$0.020",
+    avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kaZLtKaya9TSJr3M4lpzV95R2rWdQtGk67fwedroUfSnE=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Hakua Lira",
+    subscribers: "3.6k",
+    totalEarnings: "440k",
+    fanTokenPrice: "$0.038",
+    avatar: "https://yt3.googleusercontent.com/Ns15zJ-FlKgvJ7TbEIXs6rtPn-Ft4OIUMJR6ff-yX4EN9Zmv3qfxZVu24m0mF2zKUbdioOrNLDE=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Amaya",
+    subscribers: "3.2k",
+    totalEarnings: "420k",
+    fanTokenPrice: "$0.017",
+    avatar: "https://yt3.googleusercontent.com/Z5-blM3tzwkjPLe-6yG01CCjExRyNRauqgXq8qGOfE3lZOUgwqfypOwWYcFFewy8kbbtpRtUBCs=s160-c-k-c0x00ffffff-no-rj",
+  },
+  {
+    name: "Tentei Forte",
+    subscribers: "3.0k",
+    totalEarnings: "400k",
+    fanTokenPrice: "$0.023",
+    avatar: "https://yt3.googleusercontent.com/Y5bTMHiUe_0aXaDhC-h3fEQ2Xnm5QqVrdy_Qdw_HHvpkcewhavrw24DGGsmhARcvZ3iZd2LG=s160-c-k-c0x00ffffff-no-rj",
   },
 ];
 
@@ -453,6 +586,7 @@ export const collections = [
   {
     uid: "mika",
     name: "First collection",
+    sc_name: "Mika Collection 1",
     floor: "0.04",
     volume: "2,133",
     image: "/frontend/public/assets/images/mika/collection1.jpg",
@@ -461,18 +595,21 @@ export const collections = [
     owner: "2%",
     items: [
       {
+        id: "1",
         name: "Item 1",
         floor: "0.04",
         volume: "1,000",
         image: "/frontend/public/assets/images/mika/item1.1.jpg",
       },
       {
+        id: "2",
         name: "Item 2",
         floor: "0.04",
         volume: "903",
         image: "/frontend/public/assets/images/mika/item1.2.jpg",
       },
       {
+        id: "3",
         name: "Item 3",
         floor: "0.04",
         volume: "230",
@@ -483,6 +620,7 @@ export const collections = [
   {
     uid: "mika",
     name: "Second collection",
+    sc_name: "Mika Collection 2",
     floor: "0.6",
     volume: "34",
     image: "/frontend/public/assets/images/mika/collection2.jpg",
@@ -491,12 +629,14 @@ export const collections = [
     owner: "3%",
     items: [
       {
+        id: "1",
         name: "Item 1",
         floor: "0.2",
         volume: "19",
         image: "/frontend/public/assets/images/mika/item2.1.jpg",
       },
       {
+        id: "2",
         name: "Item 2",
         floor: "0.4",
         volume: "15",
@@ -563,3 +703,40 @@ export const collections = [
 export const getCollections = (uid: string) => {
   return collections.filter((collection) => collection.uid === uid.toLowerCase());
 };
+
+export const getItems = async (uid: string, collection_index: number, collection: string) => {
+  const aptos = aptosClient();
+  const listedCollections = await aptos.view({ payload: {
+    function: `${NFT_WALLET}::digital_asset::get_all_collection_listed`,
+    functionArguments: [],
+    typeArguments: [],
+  }})
+
+  const listedItems = await aptos.view({ payload: {
+    function: `${NFT_WALLET}::digital_asset::get_all_token_id_listed`,
+    functionArguments: [],
+    typeArguments: [],
+  }})
+
+  const collections = getCollections(uid);
+
+  const result = [];
+  if (!collection) {
+    return result;
+  }
+  console.log(collections[collection_index].items);
+
+
+  (listedCollections[0] as Array<string>).forEach((listedCollection, index) => {
+    if (listedCollection.includes(collection)) {
+      console.log(index, listedItems[0][index]);
+
+      result.push(collections[collection_index].items.filter(item => item.id === listedItems[0][index])[0]);
+    }
+  })
+
+  console.log(result);
+  return result;
+}
+
+export const NFT_WALLET = "0x77361721c2f7b653afd6b8dc7308428af91f694aa4dc46deb8ecfde12a47f3c3"

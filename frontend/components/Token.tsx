@@ -3,6 +3,11 @@ import { Button } from "./ui/button";
 import { useQuery } from "@tanstack/react-query";
 import { useWallet } from "@aptos-labs/wallet-adapter-react";
 
+enum TokenStatus {
+  NotRegistered,
+  ComingSoon,
+}
+
 export default function Token({ token }) {
   const register = async () => {
     const tx = await getRegisterCoinTxData(token.address);
@@ -15,12 +20,13 @@ export default function Token({ token }) {
   const isRegistered = useQuery({
     queryKey: ["registered", token.address],
     queryFn: async () => {
+      if (token.address === "") return TokenStatus.ComingSoon;
       const registered = await isRegisteredCoin(account?.address, token.address);
       if (registered) {
         return await fetchCoinBalance(account?.address, token.address);
       }
 
-      return false;
+      return TokenStatus.NotRegistered;
     },
   });
 
@@ -28,7 +34,7 @@ export default function Token({ token }) {
     <div className="min-w-[320px] token-shadow p-4 rounded-lg font-[FairyMuffin]">
       <div className="flex justify-between items-center mb-4">
         <div className="flex items-center gap-4">
-          <img src={token.icon} alt="ETH" className="w-[50px] aspect-square rounded-full" />
+          <img src={token.icon} alt={token.symbol} className="w-[50px] aspect-square rounded-full" />
           <h2 className="text-xl font-[FairyMuffin]">{token.symbol}</h2>
         </div>
         <p className="text-gray-400">{token.name}</p>
@@ -41,10 +47,12 @@ export default function Token({ token }) {
       >
         {isRegistered.isLoading ? (
           "Loading..."
-        ) : isRegistered.data ? (
-          <span className="font-[Poppins]">{isRegistered.data}</span>
-        ) : (
+        ) : isRegistered.data === TokenStatus.ComingSoon ? (
+          "Coming soon"
+        ) : isRegistered.data === TokenStatus.NotRegistered ? (
           "Register"
+        ) : (
+          <span className="font-[Poppins]">{isRegistered.data}</span>
         )}
       </Button>
     </div>

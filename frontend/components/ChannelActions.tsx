@@ -79,10 +79,12 @@ export default function ChannelActions({ channel }: ChannelActionsProps) {
     });
     console.log(txn);
 
-    tx = await getDepositTxData(channel.coinAddress, fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]);
-    await (window as any).aptos.signAndSubmitTransaction(tx);
+    setTimeout(async () => {
+      tx = await getDepositTxData(channel.coinAddress, fetchSubscriptionPlan.data?.subscriptionPlanInfo[0][1]);
+      await (window as any).aptos.signAndSubmitTransaction(tx);
 
-    fetchSubscriptionStatus.refetch();
+      fetchSubscriptionStatus.refetch();
+    }, 1000);
   };
 
   const registerCoin = async () => {

@@ -8,10 +8,11 @@ import StreamCategory from "@/components/StreamCategory";
 import SectionTitle from "@/components/SectionTitle";
 import SuggestStreamer from "@/components/SuggestStreamer";
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogTrigger } from "@/components/ui/dialog";
-import { getRandomCategory, streamers, getCollections } from "@/utils/db";
+import { getRandomCategory, streamers, getCollections, getItems } from "@/utils/db";
 import NFT from "@/public/assets/images/nft.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { redirect } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 
 const header = ["Token name", "Price", "1 hour", "1 day", "FDV", "Volume"];
 
@@ -24,6 +25,18 @@ type HomeSectionProps = {
 export default function HomeSection({ name, videos, token }: HomeSectionProps) {
   const [collection, setCollection] = useState(0);
   const collections = getCollections(name);
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetch = async () => {
+      console.log("calling for collection", collection);
+      const items = await getItems(name, collection, collections[collection].sc_name);
+
+      setItems(items);
+    };
+
+    fetch();
+  }, [collection]);
 
   return (
     <>
@@ -128,12 +141,14 @@ export default function HomeSection({ name, videos, token }: HomeSectionProps) {
                 <h3 className="text-lg">Items</h3>
                 <div className="w-full overflow-auto">
                   <div className="flex gap-4 w-fit">
-                    {collections[collection].items.map((item, index) => (
+                    {items?.map((item, index) => (
                       <>
                         <Collection
                           key={index}
                           image={item.image}
                           name={item.name}
+                          sc_name={collections[collection].sc_name}
+                          id={item.id}
                           floor={item.floor}
                           volume={item.volume}
                           small
@@ -158,7 +173,7 @@ export default function HomeSection({ name, videos, token }: HomeSectionProps) {
       <div>
         <SectionTitle icon={<Suggestion />} title="Suggested streamers" />
         <div className="flex gap-6">
-          {streamers.map((streamer, index) => (
+          {streamers.splice(2, 4).map((streamer, index) => (
             <SuggestStreamer key={index} img={streamer.avatar} name={streamer.name} />
           ))}
         </div>
